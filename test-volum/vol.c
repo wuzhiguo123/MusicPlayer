@@ -6,7 +6,7 @@ int main()
     int err;
     snd_mixer_t *handle;
     snd_mixer_selem_id_t *sid;
-    const char *card = "default";
+    const char *card = "hw:AudioPCI";
     const char *selem_name = "Master";
 
     // 打开混音器
