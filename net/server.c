@@ -18,7 +18,7 @@ void* ReciveMusicInfo(void* arg)
         while(1)
         {
             size+=recv(conn_fd, buffer+size, sizeof(int) - size, 0);
-            if(size >= sizeof(int))
+            if(size == sizeof(int))
                 break;
         }
         size = 0;
@@ -27,7 +27,7 @@ void* ReciveMusicInfo(void* arg)
         while(1)
         {
             size += recv(conn_fd, buffer+size, len - size, 0);
-            if(size >= len)
+            if(size == len)
                 break;
         }
         printf("%s\n",buffer);
