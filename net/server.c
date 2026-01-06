@@ -30,6 +30,7 @@ void* ReciveMusicInfo(void* arg)
             if(size == len)
                 break;
         }
+        size = 0;
         printf("%s\n",buffer);
         memset(buffer, 0, sizeof(buffer));
     }
