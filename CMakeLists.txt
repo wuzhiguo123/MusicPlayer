@@ -18,7 +18,7 @@ project(MusicPlayer C)
 # 设置C标准版本（C11是当前常用的标准）
 set(CMAKE_C_STANDARD 11)          # 使用C11标准
 set(CMAKE_C_STANDARD_REQUIRED ON) # 必须使用指定标准
-set(CMAKE_C_EXTENSIONS ON)       # 关闭编译器扩展，提高可移植性
+set(CMAKE_C_EXTENSIONS OFF)       
 
 # 设置编译警告（帮助发现潜在问题）
 # -Wall: 启用大部分警告
