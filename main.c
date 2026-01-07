@@ -3,6 +3,7 @@
 #include "player.h"
 #include "net/net.h"
 #include <stdlib.h>
+#include "device.h"
 int main()
 {
     system("bash init.sh");
@@ -15,6 +16,8 @@ int main()
     }
     //初始化共享内存
     InitShm();
+
+    SetVolume(DEFAULT_VOLUME);
 
     //初始化网络
     int ret = InitSocket();

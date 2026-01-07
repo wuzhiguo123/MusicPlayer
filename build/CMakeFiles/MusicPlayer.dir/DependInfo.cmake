@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/root/musicplayer/device/device.c" "/root/musicplayer/build/CMakeFiles/MusicPlayer.dir/device/device.c.o"
   "/root/musicplayer/main.c" "/root/musicplayer/build/CMakeFiles/MusicPlayer.dir/main.c.o"
   "/root/musicplayer/musiclink/link.c" "/root/musicplayer/build/CMakeFiles/MusicPlayer.dir/musiclink/link.c.o"
   "/root/musicplayer/net/net.c" "/root/musicplayer/build/CMakeFiles/MusicPlayer.dir/net/net.c.o"
@@ -18,6 +19,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../musiclink"
   "../select"
   "../net"
+  "../device"
   "../"
   "/usr/local/include/json-c"
   )

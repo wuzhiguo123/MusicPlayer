@@ -1,27 +1,32 @@
 [
 {
   "directory": "/root/musicplayer/build",
-  "command": "/usr/bin/cc  -I/root/musicplayer/player -I/root/musicplayer/musiclink -I/root/musicplayer/select -I/root/musicplayer/net -I/root/musicplayer -I/usr/local/include/json-c   -Wall -Wextra   -std=c11 -o CMakeFiles/MusicPlayer.dir/player/player.c.o   -c /root/musicplayer/player/player.c",
+  "command": "/usr/bin/cc  -I/root/musicplayer/player -I/root/musicplayer/musiclink -I/root/musicplayer/select -I/root/musicplayer/net -I/root/musicplayer/device -I/root/musicplayer -I/usr/local/include/json-c   -Wall -Wextra   -std=gnu11 -o CMakeFiles/MusicPlayer.dir/player/player.c.o   -c /root/musicplayer/player/player.c",
   "file": "/root/musicplayer/player/player.c"
 },
 {
   "directory": "/root/musicplayer/build",
-  "command": "/usr/bin/cc  -I/root/musicplayer/player -I/root/musicplayer/musiclink -I/root/musicplayer/select -I/root/musicplayer/net -I/root/musicplayer -I/usr/local/include/json-c   -Wall -Wextra   -std=c11 -o CMakeFiles/MusicPlayer.dir/musiclink/link.c.o   -c /root/musicplayer/musiclink/link.c",
+  "command": "/usr/bin/cc  -I/root/musicplayer/player -I/root/musicplayer/musiclink -I/root/musicplayer/select -I/root/musicplayer/net -I/root/musicplayer/device -I/root/musicplayer -I/usr/local/include/json-c   -Wall -Wextra   -std=gnu11 -o CMakeFiles/MusicPlayer.dir/musiclink/link.c.o   -c /root/musicplayer/musiclink/link.c",
   "file": "/root/musicplayer/musiclink/link.c"
 },
 {
   "directory": "/root/musicplayer/build",
-  "command": "/usr/bin/cc  -I/root/musicplayer/player -I/root/musicplayer/musiclink -I/root/musicplayer/select -I/root/musicplayer/net -I/root/musicplayer -I/usr/local/include/json-c   -Wall -Wextra   -std=c11 -o CMakeFiles/MusicPlayer.dir/select/select.c.o   -c /root/musicplayer/select/select.c",
+  "command": "/usr/bin/cc  -I/root/musicplayer/player -I/root/musicplayer/musiclink -I/root/musicplayer/select -I/root/musicplayer/net -I/root/musicplayer/device -I/root/musicplayer -I/usr/local/include/json-c   -Wall -Wextra   -std=gnu11 -o CMakeFiles/MusicPlayer.dir/select/select.c.o   -c /root/musicplayer/select/select.c",
   "file": "/root/musicplayer/select/select.c"
 },
 {
   "directory": "/root/musicplayer/build",
-  "command": "/usr/bin/cc  -I/root/musicplayer/player -I/root/musicplayer/musiclink -I/root/musicplayer/select -I/root/musicplayer/net -I/root/musicplayer -I/usr/local/include/json-c   -Wall -Wextra   -std=c11 -o CMakeFiles/MusicPlayer.dir/main.c.o   -c /root/musicplayer/main.c",
+  "command": "/usr/bin/cc  -I/root/musicplayer/player -I/root/musicplayer/musiclink -I/root/musicplayer/select -I/root/musicplayer/net -I/root/musicplayer/device -I/root/musicplayer -I/usr/local/include/json-c   -Wall -Wextra   -std=gnu11 -o CMakeFiles/MusicPlayer.dir/main.c.o   -c /root/musicplayer/main.c",
   "file": "/root/musicplayer/main.c"
 },
 {
   "directory": "/root/musicplayer/build",
-  "command": "/usr/bin/cc  -I/root/musicplayer/player -I/root/musicplayer/musiclink -I/root/musicplayer/select -I/root/musicplayer/net -I/root/musicplayer -I/usr/local/include/json-c   -Wall -Wextra   -std=c11 -o CMakeFiles/MusicPlayer.dir/net/net.c.o   -c /root/musicplayer/net/net.c",
+  "command": "/usr/bin/cc  -I/root/musicplayer/player -I/root/musicplayer/musiclink -I/root/musicplayer/select -I/root/musicplayer/net -I/root/musicplayer/device -I/root/musicplayer -I/usr/local/include/json-c   -Wall -Wextra   -std=gnu11 -o CMakeFiles/MusicPlayer.dir/net/net.c.o   -c /root/musicplayer/net/net.c",
   "file": "/root/musicplayer/net/net.c"
+},
+{
+  "directory": "/root/musicplayer/build",
+  "command": "/usr/bin/cc  -I/root/musicplayer/player -I/root/musicplayer/musiclink -I/root/musicplayer/select -I/root/musicplayer/net -I/root/musicplayer/device -I/root/musicplayer -I/usr/local/include/json-c   -Wall -Wextra   -std=gnu11 -o CMakeFiles/MusicPlayer.dir/device/device.c.o   -c /root/musicplayer/device/device.c",
+  "file": "/root/musicplayer/device/device.c"
 }
 ]

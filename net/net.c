@@ -14,6 +14,7 @@
 #include "net.h"
 #include "player.h"
 #include "main.h"
+#include "device.h"
 // #include "../select/select.h"
 extern fd_set READSET;
 int g_sockfd = 0;
@@ -38,7 +39,7 @@ void SendMusicInfo(struct json_object* obj)
     memcpy(buffer, &len, sizeof(int));
     memcpy(buffer+sizeof(int),info , len);
     // printf("BUFFER %s\n",buffer);
-    if(send(g_sockfd,buffer,len+4,0) == -1  < 0)
+    if(send(g_sockfd,buffer,len+4,0)  < 0)
     {
         perror("send() error");
         return;
@@ -74,6 +75,9 @@ void* SendServer(void* arg)
         json_object_object_add(obj, "status", json_object_new_string(status));
         json_object_object_add(obj, "deviceid", json_object_new_string(DEVICEID));
         //获取当前音量
+        int value;
+        GetVolume(&value);
+        json_object_object_add(obj, "volume", json_object_new_int(value));
 
         //发送给服务器
         SendMusicInfo(obj);

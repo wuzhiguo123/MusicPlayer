@@ -9,6 +9,8 @@ cmake_minimum_required(VERSION 3.10)
 # 第二个参数指定语言：C表示C语言项目
 project(MusicPlayer C)
 
+
+
 # ==============================================
 # 2. 编译器设置部分
 # ==============================================
@@ -16,7 +18,7 @@ project(MusicPlayer C)
 # 设置C标准版本（C11是当前常用的标准）
 set(CMAKE_C_STANDARD 11)          # 使用C11标准
 set(CMAKE_C_STANDARD_REQUIRED ON) # 必须使用指定标准
-set(CMAKE_C_EXTENSIONS OFF)       # 关闭编译器扩展，提高可移植性
+set(CMAKE_C_EXTENSIONS ON)       # 关闭编译器扩展，提高可移植性
 
 # 设置编译警告（帮助发现潜在问题）
 # -Wall: 启用大部分警告
@@ -33,6 +35,7 @@ set(PLAYER_SOURCES player/player.c)
 set(MUSIC_SOURCES musiclink/link.c)
 set(SELECT_SOURCES select/select.c)
 set(NET_SOURCES net/net.c)
+set(DEVICE_SOURCES device/device.c)
 set(MAIN_SOURCES main.c)
 
 # 将所有源文件合并到一个列表中
@@ -42,6 +45,7 @@ set(ALL_SOURCES
     ${SELECT_SOURCES}
     ${MAIN_SOURCES}
     ${NET_SOURCES}
+    ${DEVICE_SOURCES}
 )
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(JSON-C REQUIRED json-c)
@@ -57,6 +61,7 @@ set(INCLUDE_DIRECTORIES
     ${CMAKE_CURRENT_SOURCE_DIR}/musiclink
     ${CMAKE_CURRENT_SOURCE_DIR}/select
     ${CMAKE_CURRENT_SOURCE_DIR}/net
+    ${CMAKE_CURRENT_SOURCE_DIR}/device
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
@@ -91,6 +96,8 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 target_link_libraries(${PROJECT_NAME}
     ${JSON-C_LIBRARIES}
     ${CMAKE_THREAD_LIBS_INIT}  # 或使用 ${CMAKE_THREAD_LIBS_INIT}
+    ${ALSA_LIBRARIES}
+    
 )
 # 示例：如果shm/chm.c使用了共享内存函数，添加这些库
 # target_link_libraries(${PROJECT_NAME}

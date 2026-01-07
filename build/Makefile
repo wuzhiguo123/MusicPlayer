@@ -123,6 +123,33 @@ MusicPlayer/fast:
 	$(MAKE) -f CMakeFiles/MusicPlayer.dir/build.make CMakeFiles/MusicPlayer.dir/build
 .PHONY : MusicPlayer/fast
 
+device/device.o: device/device.c.o
+
+.PHONY : device/device.o
+
+# target to build an object file
+device/device.c.o:
+	$(MAKE) -f CMakeFiles/MusicPlayer.dir/build.make CMakeFiles/MusicPlayer.dir/device/device.c.o
+.PHONY : device/device.c.o
+
+device/device.i: device/device.c.i
+
+.PHONY : device/device.i
+
+# target to preprocess a source file
+device/device.c.i:
+	$(MAKE) -f CMakeFiles/MusicPlayer.dir/build.make CMakeFiles/MusicPlayer.dir/device/device.c.i
+.PHONY : device/device.c.i
+
+device/device.s: device/device.c.s
+
+.PHONY : device/device.s
+
+# target to generate assembly for a file
+device/device.c.s:
+	$(MAKE) -f CMakeFiles/MusicPlayer.dir/build.make CMakeFiles/MusicPlayer.dir/device/device.c.s
+.PHONY : device/device.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -267,6 +294,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... MusicPlayer"
+	@echo "... device/device.o"
+	@echo "... device/device.i"
+	@echo "... device/device.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
