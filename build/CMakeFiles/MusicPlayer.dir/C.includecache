@@ -8,16 +8,10 @@
 
 ../device/device.h
 
-../main.h
-
 ../player/player.h
 sched.h
 -
 sys/shm.h
--
-
-../select/select.h
-sys/select.h
 -
 
 /root/musicplayer/main.c
@@ -38,53 +32,9 @@ device.h
 stdio.h
 -
 
-/root/musicplayer/net/net.c
-arpa/inet.h
--
-json-c/json_object.h
--
-netinet/in.h
--
-stdio.h
--
-string.h
--
-sys/select.h
--
-sys/socket.h
--
-sys/types.h
--
-json-c/json.h
--
-pthread.h
--
-json_object_iterator.h
-/root/musicplayer/net/json_object_iterator.h
-select.h
-/root/musicplayer/net/select.h
-unistd.h
--
-net.h
-/root/musicplayer/net/net.h
-player.h
-/root/musicplayer/net/player.h
-main.h
-/root/musicplayer/net/main.h
-device.h
-/root/musicplayer/net/device.h
-
 /root/musicplayer/net/net.h
 
 /root/musicplayer/select/select.h
 sys/select.h
 -
-
-/usr/local/include/json-c/json_object_iterator.h
-json_types.h
-/usr/local/include/json-c/json_types.h
-stddef.h
--
-
-/usr/local/include/json-c/json_types.h
 
