@@ -20,24 +20,6 @@ sys/shm.h
 sys/select.h
 -
 
-/root/musicplayer/main.c
-select/select.h
-/root/musicplayer/select/select.h
-musiclink/link.h
-/root/musicplayer/musiclink/link.h
-player.h
-/root/musicplayer/player.h
-net/net.h
-/root/musicplayer/net/net.h
-stdlib.h
--
-device.h
-/root/musicplayer/device.h
-
-/root/musicplayer/musiclink/link.h
-stdio.h
--
-
 /root/musicplayer/net/net.c
 arpa/inet.h
 -
@@ -75,10 +57,6 @@ device.h
 /root/musicplayer/net/device.h
 
 /root/musicplayer/net/net.h
-
-/root/musicplayer/select/select.h
-sys/select.h
--
 
 /usr/local/include/json-c/json_object_iterator.h
 json_types.h
