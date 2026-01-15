@@ -198,9 +198,6 @@ MusicPlayer_SOURCE_DIR:STATIC=/root/musicplayer
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
-//The directory containing a CMake configuration file for json-c.
-json-c_DIR:PATH=/usr/local/lib/cmake/json-c
-
 //Path to a library.
 pkgcfg_lib_JSON-C_json-c:FILEPATH=/usr/local/lib/libjson-c.so
 

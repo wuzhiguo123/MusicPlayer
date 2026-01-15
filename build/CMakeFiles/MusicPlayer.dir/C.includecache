@@ -20,6 +20,14 @@ sys/shm.h
 sys/select.h
 -
 
+/root/musicplayer/device/device.c
+device.h
+/root/musicplayer/device/device.h
+alsa/asoundlib.h
+-
+
+/root/musicplayer/device/device.h
+
 /root/musicplayer/main.c
 select/select.h
 /root/musicplayer/select/select.h
@@ -33,6 +41,14 @@ stdlib.h
 -
 device.h
 /root/musicplayer/device.h
+
+/root/musicplayer/musiclink/link.c
+link.h
+/root/musicplayer/musiclink/link.h
+stdio.h
+-
+stdlib.h
+-
 
 /root/musicplayer/musiclink/link.h
 stdio.h
@@ -75,6 +91,32 @@ device.h
 /root/musicplayer/net/device.h
 
 /root/musicplayer/net/net.h
+
+/root/musicplayer/player/player.c
+player.h
+/root/musicplayer/player/player.h
+stdio.h
+-
+string.h
+-
+sys/ipc.h
+-
+stdlib.h
+-
+sys/shm.h
+-
+
+/root/musicplayer/player/player.h
+sched.h
+-
+sys/shm.h
+-
+
+/root/musicplayer/select/select.c
+select.h
+/root/musicplayer/select/select.h
+stdio.h
+-
 
 /root/musicplayer/select/select.h
 sys/select.h

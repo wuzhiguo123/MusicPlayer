@@ -15,6 +15,7 @@ void* ReciveMusicInfo(void* arg)
 
     while(1)
     {
+        printf("123123");
         while(1)
         {
             size+=recv(conn_fd, buffer+size, sizeof(int) - size, 0);

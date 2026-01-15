@@ -77,6 +77,13 @@ add_executable(${PROJECT_NAME}  # 使用项目名称作为可执行文件名
     ${ALL_SOURCES}              # 包含所有源文件
 )
 
+add_executable(server
+    ${CMAKE_CURRENT_SOURCE_DIR}/net/server.c
+)
+target_link_libraries(server
+    ${CMAKE_THREAD_LIBS_INIT}
+)
+
 # 添加头文件搜索路径
 # 语法：target_include_directories(目标 PUBLIC/PRIVATE/INTERFACE 路径列表)
 target_include_directories(${PROJECT_NAME} PRIVATE

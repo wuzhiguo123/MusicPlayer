@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named server
+
+# Build rule for target.
+server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 server
+.PHONY : server
+
+# fast build rule for target.
+server/fast:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
+.PHONY : server/fast
+
+#=============================================================================
 # Target rules for targets named MusicPlayer
 
 # Build rule for target.
@@ -231,6 +244,33 @@ net/net.c.s:
 	$(MAKE) -f CMakeFiles/MusicPlayer.dir/build.make CMakeFiles/MusicPlayer.dir/net/net.c.s
 .PHONY : net/net.c.s
 
+net/server.o: net/server.c.o
+
+.PHONY : net/server.o
+
+# target to build an object file
+net/server.c.o:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/net/server.c.o
+.PHONY : net/server.c.o
+
+net/server.i: net/server.c.i
+
+.PHONY : net/server.i
+
+# target to preprocess a source file
+net/server.c.i:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/net/server.c.i
+.PHONY : net/server.c.i
+
+net/server.s: net/server.c.s
+
+.PHONY : net/server.s
+
+# target to generate assembly for a file
+net/server.c.s:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/net/server.c.s
+.PHONY : net/server.c.s
+
 player/player.o: player/player.c.o
 
 .PHONY : player/player.o
@@ -292,6 +332,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... server"
 	@echo "... edit_cache"
 	@echo "... MusicPlayer"
 	@echo "... device/device.o"
@@ -306,6 +347,9 @@ help:
 	@echo "... net/net.o"
 	@echo "... net/net.i"
 	@echo "... net/net.s"
+	@echo "... net/server.o"
+	@echo "... net/server.i"
+	@echo "... net/server.s"
 	@echo "... player/player.o"
 	@echo "... player/player.i"
 	@echo "... player/player.s"

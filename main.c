@@ -17,7 +17,7 @@ int main()
     //初始化共享内存
     InitShm();
 
-    SetVolume(DEFAULT_VOLUME);
+    // SetVolume(DEFAULT_VOLUME);
 
     //初始化网络
     int ret = InitSocket();

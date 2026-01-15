@@ -1,21 +1,21 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
 Change Dir: /root/musicplayer/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_e05f3/fast && /usr/bin/make -f CMakeFiles/cmTC_e05f3.dir/build.make CMakeFiles/cmTC_e05f3.dir/build
+Run Build Command(s):/usr/bin/make cmTC_90c33/fast && /usr/bin/make -f CMakeFiles/cmTC_90c33.dir/build.make CMakeFiles/cmTC_90c33.dir/build
 make[1]: Entering directory '/root/musicplayer/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_e05f3.dir/src.c.o
-/usr/bin/cc   -Wall -Wextra -DCMAKE_HAVE_LIBC_PTHREAD   -std=c11 -o CMakeFiles/cmTC_e05f3.dir/src.c.o   -c /root/musicplayer/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_e05f3
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e05f3.dir/link.txt --verbose=1
-/usr/bin/cc  -Wall -Wextra -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_e05f3.dir/src.c.o  -o cmTC_e05f3 
-/usr/bin/ld: CMakeFiles/cmTC_e05f3.dir/src.c.o: in function `main':
+Building C object CMakeFiles/cmTC_90c33.dir/src.c.o
+/usr/bin/cc   -Wall -Wextra -DCMAKE_HAVE_LIBC_PTHREAD   -std=c11 -o CMakeFiles/cmTC_90c33.dir/src.c.o   -c /root/musicplayer/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_90c33
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_90c33.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_90c33.dir/src.c.o  -o cmTC_90c33 
+/usr/bin/ld: CMakeFiles/cmTC_90c33.dir/src.c.o: in function `main':
 src.c:(.text+0x46): undefined reference to `pthread_create'
 /usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
 /usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_e05f3.dir/build.make:87: cmTC_e05f3] Error 1
+make[1]: *** [CMakeFiles/cmTC_90c33.dir/build.make:87: cmTC_90c33] Error 1
 make[1]: Leaving directory '/root/musicplayer/build/CMakeFiles/CMakeTmp'
-make: *** [Makefile:121: cmTC_e05f3/fast] Error 2
+make: *** [Makefile:121: cmTC_90c33/fast] Error 2
 
 
 Source file was:
@@ -41,18 +41,18 @@ int main(void)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /root/musicplayer/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_8a104/fast && /usr/bin/make -f CMakeFiles/cmTC_8a104.dir/build.make CMakeFiles/cmTC_8a104.dir/build
+Run Build Command(s):/usr/bin/make cmTC_3ea81/fast && /usr/bin/make -f CMakeFiles/cmTC_3ea81.dir/build.make CMakeFiles/cmTC_3ea81.dir/build
 make[1]: Entering directory '/root/musicplayer/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_8a104.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -Wall -Wextra -DCHECK_FUNCTION_EXISTS=pthread_create   -std=c11 -o CMakeFiles/cmTC_8a104.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_8a104
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8a104.dir/link.txt --verbose=1
-/usr/bin/cc  -Wall -Wextra -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_8a104.dir/CheckFunctionExists.c.o  -o cmTC_8a104  -lpthreads 
+Building C object CMakeFiles/cmTC_3ea81.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -Wall -Wextra -DCHECK_FUNCTION_EXISTS=pthread_create   -std=c11 -o CMakeFiles/cmTC_3ea81.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_3ea81
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3ea81.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wextra -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_3ea81.dir/CheckFunctionExists.c.o  -o cmTC_3ea81  -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_8a104.dir/build.make:87: cmTC_8a104] Error 1
+make[1]: *** [CMakeFiles/cmTC_3ea81.dir/build.make:87: cmTC_3ea81] Error 1
 make[1]: Leaving directory '/root/musicplayer/build/CMakeFiles/CMakeTmp'
-make: *** [Makefile:121: cmTC_8a104/fast] Error 2
+make: *** [Makefile:121: cmTC_3ea81/fast] Error 2
 
 
 

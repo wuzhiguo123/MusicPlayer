@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/musicplayer/net/server.c
+arpa/inet.h
+-
+netinet/in.h
+-
+pthread.h
+-
+stdio.h
+-
+string.h
+-
+sys/socket.h
+-
+unistd.h
+-
+
