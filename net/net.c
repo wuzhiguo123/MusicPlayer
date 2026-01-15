@@ -108,6 +108,7 @@ int InitSocket()
 
     while(connect_cnt--)
     {
+        
         connect_ret = connect(g_sockfd,(struct sockaddr*)&server_info,sizeof(server_info));
         if(connect_ret < 0)
         {
