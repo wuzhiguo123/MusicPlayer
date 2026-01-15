@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_FLAGS =  -Wall -Wextra   -std=c11
 
-C_DEFINES = 
+C_DEFINES = -D_POSIX_C_SOURCE=200809L
 
 C_INCLUDES = -I/root/musicplayer/player -I/root/musicplayer/musiclink -I/root/musicplayer/select -I/root/musicplayer/net -I/root/musicplayer/device -I/root/musicplayer -I/usr/local/include/json-c 
 

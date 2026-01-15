@@ -30,6 +30,9 @@ int main()
         printf("ONLINE MODE\n");
     }
 
+    //获取音乐文件名
+    
+
     while(1)
     {}
 }

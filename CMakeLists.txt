@@ -85,6 +85,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     ${ALSA_INCLUDE_DIRS}
 )
 
+target_compile_definitions(MusicPlayer PRIVATE _POSIX_C_SOURCE=200809L)
 
 # ==============================================
 # 5. 库链接部分（如果需要链接外部库）

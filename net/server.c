@@ -49,7 +49,7 @@ int main()
     struct sockaddr_in server_info;
     server_info.sin_family = AF_INET;
     server_info.sin_port = htons(8008);
-    server_info.sin_addr.s_addr = inet_addr("127.0.0.1");
+    server_info.sin_addr.s_addr = INADDR_ANY;
 
     int opt = 1;
     setsockopt(listen_fd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt));

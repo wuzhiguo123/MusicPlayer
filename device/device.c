@@ -1,4 +1,3 @@
-#define _POSIX_C_SOURCE 200809L
 #include "device.h"
 #include <alsa/asoundlib.h>
 
@@ -7,18 +6,16 @@ int SetVolume(long volume)
     int err;
     snd_mixer_t *handle;
     snd_mixer_selem_id_t *sid;
-    const char *card = "hw:AudioPCI";
-    const char *selem_name = "Master";
 
     // 打开混音器
     if ((err = snd_mixer_open(&handle, 0)) < 0) {
-        fprintf(stderr, "Mixer %s open error: %s\n", card, snd_strerror(err));
+        fprintf(stderr, "Mixer %s open error: %s\n", CARD_NAME, snd_strerror(err));
         return err;
     }
 
     // 连接到声卡
-    if ((err = snd_mixer_attach(handle, card)) < 0) {
-        fprintf(stderr, "Mixer attach %s error: %s\n", card, snd_strerror(err));
+    if ((err = snd_mixer_attach(handle, CARD_NAME)) < 0) {
+        fprintf(stderr, "Mixer attach %s error: %s\n", CARD_NAME, snd_strerror(err));
         snd_mixer_close(handle);
         return err;
     }
@@ -40,12 +37,12 @@ int SetVolume(long volume)
     // 创建混音器元素标识符
     snd_mixer_selem_id_malloc(&sid);
     snd_mixer_selem_id_set_index(sid, 0);
-    snd_mixer_selem_id_set_name(sid, selem_name);
+    snd_mixer_selem_id_set_name(sid, SELE_NAME);
 
     // 获取混音器元素
     snd_mixer_elem_t* elem = snd_mixer_find_selem(handle, sid);
     if (!elem) {
-        fprintf(stderr, "Unable to find simple control '%s',%i\n", selem_name, 0);
+        fprintf(stderr, "Unable to find simple control '%s',%i\n", SELE_NAME, 0);
         snd_mixer_selem_id_free(sid);
         snd_mixer_close(handle);
         return -1;
@@ -73,18 +70,16 @@ int GetVolume(int* value)
     int err;
     snd_mixer_t *handle;
     snd_mixer_selem_id_t *sid;
-    const char *card = "hw:AudioPCI";
-    const char *selem_name = "Master";
 
     // 打开混音器
     if ((err = snd_mixer_open(&handle, 0)) < 0) {
-        fprintf(stderr, "Mixer %s open error: %s\n", card, snd_strerror(err));
+        fprintf(stderr, "Mixer %s open error: %s\n", CARD_NAME, snd_strerror(err));
         return err;
     }
 
     // 连接到声卡
-    if ((err = snd_mixer_attach(handle, card)) < 0) {
-        fprintf(stderr, "Mixer attach %s error: %s\n", card, snd_strerror(err));
+    if ((err = snd_mixer_attach(handle, CARD_NAME)) < 0) {
+        fprintf(stderr, "Mixer attach %s error: %s\n", CARD_NAME, snd_strerror(err));
         snd_mixer_close(handle);
         return err;
     }
@@ -106,12 +101,12 @@ int GetVolume(int* value)
     // 创建混音器元素标识符
     snd_mixer_selem_id_malloc(&sid);
     snd_mixer_selem_id_set_index(sid, 0);
-    snd_mixer_selem_id_set_name(sid, selem_name);
+    snd_mixer_selem_id_set_name(sid, SELE_NAME);
 
     // 获取混音器元素
     snd_mixer_elem_t* elem = snd_mixer_find_selem(handle, sid);
     if (!elem) {
-        fprintf(stderr, "Unable to find simple control '%s',%i\n", selem_name, 0);
+        fprintf(stderr, "Unable to find simple control '%s',%i\n", SELE_NAME, 0);
         snd_mixer_selem_id_free(sid);
         snd_mixer_close(handle);
         return -1;
