@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+../musiclink/link.h
+stdio.h
+-
+
 /root/musicplayer/musiclink/link.c
 link.h
 /root/musicplayer/musiclink/link.h
@@ -24,6 +28,34 @@ string.h
 
 /root/musicplayer/musiclink/link.h
 stdio.h
+-
+
+/root/musicplayer/player/player.c
+player.h
+/root/musicplayer/player/player.h
+stdio.h
+-
+string.h
+-
+sys/ipc.h
+-
+stdlib.h
+-
+sys/shm.h
+-
+sys/types.h
+-
+sys/wait.h
+-
+unistd.h
+-
+link.h
+/root/musicplayer/player/link.h
+
+/root/musicplayer/player/player.h
+sched.h
+-
+sys/shm.h
 -
 
 /usr/local/include/json-c/json_config.h
