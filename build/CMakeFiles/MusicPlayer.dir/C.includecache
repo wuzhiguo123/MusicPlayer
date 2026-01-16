@@ -101,6 +101,8 @@ device.h
 /root/musicplayer/net/device.h
 link.h
 /root/musicplayer/net/link.h
+errno.h
+-
 
 /root/musicplayer/net/net.h
 
