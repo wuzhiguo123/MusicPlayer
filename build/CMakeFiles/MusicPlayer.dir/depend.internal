@@ -6,17 +6,26 @@ CMakeFiles/MusicPlayer.dir/device/device.c.o
  /root/musicplayer/device/device.h
 CMakeFiles/MusicPlayer.dir/main.c.o
  ../device/device.h
+ ../musiclink/link.h
  ../player/player.h
  /root/musicplayer/main.c
+ /root/musicplayer/main.h
  /root/musicplayer/musiclink/link.h
  /root/musicplayer/net/net.h
  /root/musicplayer/select/select.h
 CMakeFiles/MusicPlayer.dir/musiclink/link.c.o
  /root/musicplayer/musiclink/link.c
  /root/musicplayer/musiclink/link.h
+ /usr/local/include/json-c/json_config.h
+ /usr/local/include/json-c/json_inttypes.h
+ /usr/local/include/json-c/json_object.h
+ /usr/local/include/json-c/json_tokener.h
+ /usr/local/include/json-c/json_types.h
+ /usr/local/include/json-c/printbuf.h
 CMakeFiles/MusicPlayer.dir/net/net.c.o
  ../device/device.h
  ../main.h
+ ../musiclink/link.h
  ../player/player.h
  ../select/select.h
  /root/musicplayer/net/net.c
@@ -24,8 +33,10 @@ CMakeFiles/MusicPlayer.dir/net/net.c.o
  /usr/local/include/json-c/json_object_iterator.h
  /usr/local/include/json-c/json_types.h
 CMakeFiles/MusicPlayer.dir/player/player.c.o
+ ../musiclink/link.h
  /root/musicplayer/player/player.c
  /root/musicplayer/player/player.h
 CMakeFiles/MusicPlayer.dir/select/select.c.o
+ ../player/player.h
  /root/musicplayer/select/select.c
  /root/musicplayer/select/select.h

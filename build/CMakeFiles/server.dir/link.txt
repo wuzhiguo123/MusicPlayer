@@ -1,1 +1,1 @@
-/usr/bin/cc  -Wall -Wextra   CMakeFiles/server.dir/net/server.c.o  -o server  -lpthread 
+/usr/bin/cc  -Wall -Wextra   CMakeFiles/server.dir/net/server.c.o  -o server  -lpthread -ljson-c 

@@ -5,17 +5,26 @@ CMakeFiles/MusicPlayer.dir/device/device.c.o: ../device/device.c
 CMakeFiles/MusicPlayer.dir/device/device.c.o: ../device/device.h
 
 CMakeFiles/MusicPlayer.dir/main.c.o: ../device/device.h
+CMakeFiles/MusicPlayer.dir/main.c.o: ../musiclink/link.h
 CMakeFiles/MusicPlayer.dir/main.c.o: ../player/player.h
 CMakeFiles/MusicPlayer.dir/main.c.o: ../main.c
+CMakeFiles/MusicPlayer.dir/main.c.o: ../main.h
 CMakeFiles/MusicPlayer.dir/main.c.o: ../musiclink/link.h
 CMakeFiles/MusicPlayer.dir/main.c.o: ../net/net.h
 CMakeFiles/MusicPlayer.dir/main.c.o: ../select/select.h
 
 CMakeFiles/MusicPlayer.dir/musiclink/link.c.o: ../musiclink/link.c
 CMakeFiles/MusicPlayer.dir/musiclink/link.c.o: ../musiclink/link.h
+CMakeFiles/MusicPlayer.dir/musiclink/link.c.o: /usr/local/include/json-c/json_config.h
+CMakeFiles/MusicPlayer.dir/musiclink/link.c.o: /usr/local/include/json-c/json_inttypes.h
+CMakeFiles/MusicPlayer.dir/musiclink/link.c.o: /usr/local/include/json-c/json_object.h
+CMakeFiles/MusicPlayer.dir/musiclink/link.c.o: /usr/local/include/json-c/json_tokener.h
+CMakeFiles/MusicPlayer.dir/musiclink/link.c.o: /usr/local/include/json-c/json_types.h
+CMakeFiles/MusicPlayer.dir/musiclink/link.c.o: /usr/local/include/json-c/printbuf.h
 
 CMakeFiles/MusicPlayer.dir/net/net.c.o: ../device/device.h
 CMakeFiles/MusicPlayer.dir/net/net.c.o: ../main.h
+CMakeFiles/MusicPlayer.dir/net/net.c.o: ../musiclink/link.h
 CMakeFiles/MusicPlayer.dir/net/net.c.o: ../player/player.h
 CMakeFiles/MusicPlayer.dir/net/net.c.o: ../select/select.h
 CMakeFiles/MusicPlayer.dir/net/net.c.o: ../net/net.c
@@ -23,9 +32,11 @@ CMakeFiles/MusicPlayer.dir/net/net.c.o: ../net/net.h
 CMakeFiles/MusicPlayer.dir/net/net.c.o: /usr/local/include/json-c/json_object_iterator.h
 CMakeFiles/MusicPlayer.dir/net/net.c.o: /usr/local/include/json-c/json_types.h
 
+CMakeFiles/MusicPlayer.dir/player/player.c.o: ../musiclink/link.h
 CMakeFiles/MusicPlayer.dir/player/player.c.o: ../player/player.c
 CMakeFiles/MusicPlayer.dir/player/player.c.o: ../player/player.h
 
+CMakeFiles/MusicPlayer.dir/select/select.c.o: ../player/player.h
 CMakeFiles/MusicPlayer.dir/select/select.c.o: ../select/select.c
 CMakeFiles/MusicPlayer.dir/select/select.c.o: ../select/select.h
 
