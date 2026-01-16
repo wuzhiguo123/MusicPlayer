@@ -1,6 +1,7 @@
 #include <arpa/inet.h>
 #include <json-c/json_object.h>
 #include <netinet/in.h>
+#include <stddef.h>
 #include <stdio.h>
 #include <string.h>
 #include <sys/select.h>
@@ -15,12 +16,14 @@
 #include "player.h"
 #include "main.h"
 #include "device.h"
+#include "link.h"
 // #include "../select/select.h"
 extern fd_set READSET;
 int g_sockfd = 0;
 int g_maxfd = 0;
 extern int g_start_flag;
 extern int g_suspend_flag;
+extern int g_device_mode;
 
 
 void SendMusicInfo(struct json_object* obj)
@@ -105,10 +108,9 @@ int InitSocket()
     server_info.sin_addr.s_addr = inet_addr(IP);
     server_info.sin_family = AF_INET;
     server_info.sin_port = htons(PORT);
-
+    printf("123");
     while(connect_cnt--)
     {
-        
         connect_ret = connect(g_sockfd,(struct sockaddr*)&server_info,sizeof(server_info));
         if(connect_ret < 0)
         {
@@ -119,7 +121,8 @@ int InitSocket()
 
         FD_SET(g_sockfd,&READSET);
         g_maxfd = (g_maxfd < g_sockfd) ? g_sockfd : g_maxfd;
-
+        g_device_mode = ONLINE_MODE;
+        printf("DEVICE MODE:ONLINE MODE!");
         pthread_t id;
         if(pthread_create(&id, NULL, SendServer, 0) != 0)
         {
@@ -131,3 +134,46 @@ int InitSocket()
     }
     return connect_ret;
 }
+
+
+int RecMusicName(char* music_name)
+{
+    int len = 0;
+    size_t size = 0;//一定要初始化
+    while(1)
+    {
+        size += recv(g_sockfd,music_name+size, sizeof(int)-size, 0);
+        if(size == sizeof(int))
+            break;
+    }
+
+    size = 0;
+    len = *(int*)music_name;
+    memset(music_name, 0, sizeof(int));
+
+    while(1)
+    {
+        size += recv(g_sockfd, music_name+size, len-size, 0);
+        if(size == (size_t)len)
+            break;
+    }
+    // printf("RECIVE MUSIC NAME:%s",music_name);
+    return 0;
+}
+
+//向服务器根据歌手名请求音乐数据
+int GetMusicName(const char* singer)
+{
+    struct json_object *obj = json_object_new_object();
+    json_object_object_add(obj, "cmd", json_object_new_string("get_music_list"));
+    json_object_object_add(obj, "singer", json_object_new_string(singer));
+    SendMusicInfo(obj);
+
+    char music_name[1024] = {0};
+    RecMusicName(music_name);
+
+    LinkMusicList(music_name);
+    json_object_put(obj);
+    return 0;
+}
+

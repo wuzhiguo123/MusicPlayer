@@ -4,9 +4,14 @@
 #include <sched.h>
 #include <sys/shm.h>
 #define SHMSIZE 4096
+//播放模式
 #define SEQUENCE 1
 #define CIRCLE   2
 
+#define ONLINE_MODE 1
+#define OFFLINE_MODE 2
+#define ONLINE_URL "http://47.94.80.54/music/"
+#define OFFLINE_URL "XXXX"
 
 
 typedef struct Shm
@@ -20,5 +25,6 @@ typedef struct Shm
 void InitShm();
 void ShmDestroy();
 void GetShm(Shm* music_info);
+void StartPlay();
 
 #endif

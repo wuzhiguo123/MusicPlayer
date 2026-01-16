@@ -82,6 +82,8 @@ add_executable(server
 )
 target_link_libraries(server
     ${CMAKE_THREAD_LIBS_INIT}
+    ${JSON-C_LIBRARIES}
+    ${JSON-C_INCLUDE_DIRS}
 )
 
 # 添加头文件搜索路径

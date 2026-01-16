@@ -1,10 +1,36 @@
 #include <arpa/inet.h>
+#include <json-c/json_object.h>
+#include <json-c/json_tokener.h>
+#include <json-c/json_types.h>
 #include <netinet/in.h>
 #include <pthread.h>
 #include <stdio.h>
 #include <string.h>
 #include <sys/socket.h>
 #include <unistd.h>
+
+void SendInfo(struct json_object* snd_obj,int fd)
+{
+    char buffer[1024] = {0};
+    int len = 0;
+    //序列化
+    const char* info = json_object_to_json_string(snd_obj);
+    printf("%s\n",info);
+    if(info == NULL)
+    {
+        perror("jason_object_to_json_string() error");
+    }
+    //简单的头部长度校验协议，前四个字节放入消息的字节长度
+    len = strlen(info);
+    memcpy(buffer, &len, sizeof(int));
+    memcpy(buffer+sizeof(int),info , len);
+    // printf("BUFFER %s\n",buffer);
+    if(send(fd,buffer,len+4,0)  < 0)
+    {
+        perror("send() error");
+        return;
+    }
+}
 
 void* ReciveMusicInfo(void* arg)
 {
@@ -15,7 +41,6 @@ void* ReciveMusicInfo(void* arg)
 
     while(1)
     {
-        printf("123123");
         while(1)
         {
             size+=recv(conn_fd, buffer+size, sizeof(int) - size, 0);
@@ -33,6 +58,28 @@ void* ReciveMusicInfo(void* arg)
         }
         size = 0;
         printf("%s\n",buffer);
+
+        //把收到的字符串转换成JSON对象
+        struct json_object* music_info = json_tokener_parse(buffer);
+        struct json_object* val = json_object_object_get(music_info, "cmd");
+        if(strcmp("get_music_list", json_object_get_string(val)) == 0)
+        {
+            //返回音乐数据
+            struct json_object* snd_obj = json_object_new_object();
+            json_object_object_add(snd_obj, "cmd", json_object_new_string("reply_music_list"));
+
+            struct json_object* music_array = json_object_new_array();
+            json_object_array_add(music_array, json_object_new_string("其他/以后的以后.mp3"));
+            json_object_array_add(music_array, json_object_new_string("其他/倾国倾城.mp3"));
+            json_object_array_add(music_array, json_object_new_string("其他/童话.mp3"));
+            json_object_array_add(music_array, json_object_new_string("其他/那些年.mp3"));
+            json_object_array_add(music_array, json_object_new_string("其他/一直想着他.mp3"));
+
+            json_object_object_add(snd_obj, "music", music_array);
+
+            SendInfo(snd_obj,conn_fd);
+
+        }
         memset(buffer, 0, sizeof(buffer));
     }
 }
@@ -50,7 +97,8 @@ int main()
     struct sockaddr_in server_info;
     server_info.sin_family = AF_INET;
     server_info.sin_port = htons(8008);
-    server_info.sin_addr.s_addr = INADDR_ANY;
+    server_info.sin_addr.s_addr = htonl(INADDR_ANY);
+
 
     int opt = 1;
     setsockopt(listen_fd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt));

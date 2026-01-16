@@ -9,4 +9,5 @@ typedef struct MusicNode
 }MusicNode;
 
 int InitMusicLink();
+int LinkMusicList(const char*);
 #endif
