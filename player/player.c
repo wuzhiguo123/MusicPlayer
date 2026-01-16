@@ -164,6 +164,7 @@ void StartPlay()
     char music_name[128] = {0};
     strcpy(music_name, music_head->music_name);
     g_start_flag = 1;
+    printf("音乐名称:%s",music_name);
     PlayMusic(music_name);
 }
 
