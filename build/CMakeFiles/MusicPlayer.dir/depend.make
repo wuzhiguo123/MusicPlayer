@@ -33,6 +33,7 @@ CMakeFiles/MusicPlayer.dir/net/net.c.o: /usr/local/include/json-c/json_object_it
 CMakeFiles/MusicPlayer.dir/net/net.c.o: /usr/local/include/json-c/json_types.h
 
 CMakeFiles/MusicPlayer.dir/player/player.c.o: ../musiclink/link.h
+CMakeFiles/MusicPlayer.dir/player/player.c.o: ../net/net.h
 CMakeFiles/MusicPlayer.dir/player/player.c.o: ../player/player.c
 CMakeFiles/MusicPlayer.dir/player/player.c.o: ../player/player.h
 
