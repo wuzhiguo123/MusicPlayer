@@ -33,6 +33,10 @@ sys/wait.h
 -
 unistd.h
 -
+stdlib.h
+-
+time.h
+-
 link.h
 /root/musicplayer/player/link.h
 net.h
