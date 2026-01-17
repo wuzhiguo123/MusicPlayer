@@ -13,6 +13,7 @@ CMakeFiles/MusicPlayer.dir/main.c.o: ../musiclink/link.h
 CMakeFiles/MusicPlayer.dir/main.c.o: ../net/net.h
 CMakeFiles/MusicPlayer.dir/main.c.o: ../select/select.h
 
+CMakeFiles/MusicPlayer.dir/musiclink/link.c.o: ../main.h
 CMakeFiles/MusicPlayer.dir/musiclink/link.c.o: ../musiclink/link.c
 CMakeFiles/MusicPlayer.dir/musiclink/link.c.o: ../musiclink/link.h
 CMakeFiles/MusicPlayer.dir/musiclink/link.c.o: /usr/local/include/json-c/json_config.h
