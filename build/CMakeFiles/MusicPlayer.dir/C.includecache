@@ -12,12 +12,6 @@ stdio.h
 
 ../net/net.h
 
-../player/player.h
-sched.h
--
-sys/shm.h
--
-
 /root/musicplayer/player/player.c
 player.h
 /root/musicplayer/player/player.h
@@ -54,27 +48,5 @@ net.h
 sched.h
 -
 sys/shm.h
--
-
-/root/musicplayer/select/select.c
-select.h
-/root/musicplayer/select/select.h
-asm-generic/errno-base.h
--
-errno.h
--
-stdio.h
--
-player.h
-/root/musicplayer/select/player.h
-sys/select.h
--
-unistd.h
--
-pthread.h
--
-
-/root/musicplayer/select/select.h
-sys/select.h
 -
 
