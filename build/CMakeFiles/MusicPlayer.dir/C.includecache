@@ -6,6 +6,8 @@
 
 #IncludeRegexTransform: 
 
+../device/device.h
+
 ../main.h
 link.h
 ../link.h
@@ -25,6 +27,40 @@ sched.h
 -
 sys/shm.h
 -
+
+/root/musicplayer/main.c
+select/select.h
+/root/musicplayer/select/select.h
+musiclink/link.h
+/root/musicplayer/musiclink/link.h
+player.h
+/root/musicplayer/player.h
+net/net.h
+/root/musicplayer/net/net.h
+signal.h
+-
+stdlib.h
+-
+device.h
+/root/musicplayer/device.h
+main.h
+/root/musicplayer/main.h
+
+/root/musicplayer/main.h
+link.h
+/root/musicplayer/link.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+
+/root/musicplayer/musiclink/link.h
+stdio.h
+-
+
+/root/musicplayer/net/net.h
 
 /root/musicplayer/select/select.c
 select.h
