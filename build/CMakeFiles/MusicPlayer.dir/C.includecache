@@ -8,19 +8,11 @@
 
 ../device/device.h
 
-../main.h
-link.h
-../link.h
-stdio.h
--
-stdlib.h
--
-string.h
--
-
 ../musiclink/link.h
 stdio.h
 -
+
+../net/net.h
 
 ../player/player.h
 sched.h
@@ -62,25 +54,43 @@ stdio.h
 
 /root/musicplayer/net/net.h
 
-/root/musicplayer/select/select.c
-select.h
-/root/musicplayer/select/select.h
-asm-generic/errno-base.h
+/root/musicplayer/player/player.c
+player.h
+/root/musicplayer/player/player.h
+fcntl.h
 -
-errno.h
+signal.h
 -
 stdio.h
 -
-player.h
-/root/musicplayer/select/player.h
-sys/select.h
+string.h
+-
+sys/ipc.h
+-
+stdlib.h
+-
+sys/shm.h
+-
+sys/types.h
+-
+sys/wait.h
 -
 unistd.h
 -
-pthread.h
+stdlib.h
 -
-main.h
-/root/musicplayer/select/main.h
+time.h
+-
+link.h
+/root/musicplayer/player/link.h
+net.h
+/root/musicplayer/player/net.h
+
+/root/musicplayer/player/player.h
+sched.h
+-
+sys/shm.h
+-
 
 /root/musicplayer/select/select.h
 sys/select.h
