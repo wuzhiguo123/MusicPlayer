@@ -6,31 +6,47 @@
 
 #IncludeRegexTransform: 
 
-../player/player.h
-sched.h
--
-sys/shm.h
+../musiclink/link.h
+stdio.h
 -
 
-/root/musicplayer/select/select.c
-select.h
-/root/musicplayer/select/select.h
-asm-generic/errno-base.h
+../net/net.h
+
+/root/musicplayer/player/player.c
+player.h
+/root/musicplayer/player/player.h
+fcntl.h
 -
-errno.h
+signal.h
 -
 stdio.h
 -
-player.h
-/root/musicplayer/select/player.h
-sys/select.h
+string.h
+-
+sys/ipc.h
+-
+stdlib.h
+-
+sys/shm.h
+-
+sys/types.h
+-
+sys/wait.h
 -
 unistd.h
 -
-pthread.h
+stdlib.h
 -
+time.h
+-
+link.h
+/root/musicplayer/player/link.h
+net.h
+/root/musicplayer/player/net.h
 
-/root/musicplayer/select/select.h
-sys/select.h
+/root/musicplayer/player/player.h
+sched.h
+-
+sys/shm.h
 -
 
