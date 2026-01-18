@@ -38,6 +38,8 @@ CMakeFiles/MusicPlayer.dir/player/player.c.o: ../net/net.h
 CMakeFiles/MusicPlayer.dir/player/player.c.o: ../player/player.c
 CMakeFiles/MusicPlayer.dir/player/player.c.o: ../player/player.h
 
+CMakeFiles/MusicPlayer.dir/select/select.c.o: ../main.h
+CMakeFiles/MusicPlayer.dir/select/select.c.o: ../musiclink/link.h
 CMakeFiles/MusicPlayer.dir/select/select.c.o: ../player/player.h
 CMakeFiles/MusicPlayer.dir/select/select.c.o: ../select/select.c
 CMakeFiles/MusicPlayer.dir/select/select.c.o: ../select/select.h

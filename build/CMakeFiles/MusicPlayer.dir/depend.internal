@@ -39,6 +39,8 @@ CMakeFiles/MusicPlayer.dir/player/player.c.o
  /root/musicplayer/player/player.c
  /root/musicplayer/player/player.h
 CMakeFiles/MusicPlayer.dir/select/select.c.o
+ ../main.h
+ ../musiclink/link.h
  ../player/player.h
  /root/musicplayer/select/select.c
  /root/musicplayer/select/select.h
