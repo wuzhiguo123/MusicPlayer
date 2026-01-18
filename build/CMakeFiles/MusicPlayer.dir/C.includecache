@@ -6,7 +6,15 @@
 
 #IncludeRegexTransform: 
 
-../device/device.h
+../main.h
+link.h
+../link.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
 
 ../musiclink/link.h
 stdio.h
@@ -18,39 +26,25 @@ sched.h
 sys/shm.h
 -
 
-/root/musicplayer/main.c
-select/select.h
+/root/musicplayer/select/select.c
+select.h
 /root/musicplayer/select/select.h
-musiclink/link.h
-/root/musicplayer/musiclink/link.h
+asm-generic/errno-base.h
+-
+errno.h
+-
+stdio.h
+-
 player.h
-/root/musicplayer/player.h
-net/net.h
-/root/musicplayer/net/net.h
-signal.h
+/root/musicplayer/select/player.h
+sys/select.h
 -
-stdlib.h
+unistd.h
 -
-device.h
-/root/musicplayer/device.h
+pthread.h
+-
 main.h
-/root/musicplayer/main.h
-
-/root/musicplayer/main.h
-link.h
-/root/musicplayer/link.h
-stdio.h
--
-stdlib.h
--
-string.h
--
-
-/root/musicplayer/musiclink/link.h
-stdio.h
--
-
-/root/musicplayer/net/net.h
+/root/musicplayer/select/main.h
 
 /root/musicplayer/select/select.h
 sys/select.h
