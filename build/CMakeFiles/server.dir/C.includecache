@@ -25,6 +25,8 @@ string.h
 -
 sys/socket.h
 -
+sys/types.h
+-
 unistd.h
 -
 
