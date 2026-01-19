@@ -6,6 +6,26 @@
 
 #IncludeRegexTransform: 
 
+../main.h
+link.h
+../link.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+
+../musiclink/link.h
+stdio.h
+-
+
+../player/player.h
+sched.h
+-
+sys/shm.h
+-
+
 /root/musicplayer/device/device.c
 device.h
 /root/musicplayer/device/device.h
@@ -13,4 +33,28 @@ alsa/asoundlib.h
 -
 
 /root/musicplayer/device/device.h
+
+/root/musicplayer/select/select.c
+select.h
+/root/musicplayer/select/select.h
+asm-generic/errno-base.h
+-
+errno.h
+-
+stdio.h
+-
+player.h
+/root/musicplayer/select/player.h
+sys/select.h
+-
+unistd.h
+-
+pthread.h
+-
+main.h
+/root/musicplayer/select/main.h
+
+/root/musicplayer/select/select.h
+sys/select.h
+-
 
