@@ -6,11 +6,51 @@
 
 #IncludeRegexTransform: 
 
-/root/musicplayer/device/device.c
-device.h
-/root/musicplayer/device/device.h
-alsa/asoundlib.h
+../device/device.h
+
+../musiclink/link.h
+stdio.h
 -
 
-/root/musicplayer/device/device.h
+../net/net.h
+
+/root/musicplayer/player/player.c
+player.h
+/root/musicplayer/player/player.h
+fcntl.h
+-
+signal.h
+-
+stdio.h
+-
+string.h
+-
+sys/ipc.h
+-
+stdlib.h
+-
+sys/shm.h
+-
+sys/types.h
+-
+sys/wait.h
+-
+unistd.h
+-
+stdlib.h
+-
+time.h
+-
+link.h
+/root/musicplayer/player/link.h
+net.h
+/root/musicplayer/player/net.h
+device.h
+/root/musicplayer/player/device.h
+
+/root/musicplayer/player/player.h
+sched.h
+-
+sys/shm.h
+-
 
