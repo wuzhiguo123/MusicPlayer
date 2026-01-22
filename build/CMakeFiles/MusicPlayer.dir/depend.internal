@@ -47,6 +47,7 @@ CMakeFiles/MusicPlayer.dir/player/player.c.o
 CMakeFiles/MusicPlayer.dir/select/select.c.o
  ../main.h
  ../musiclink/link.h
+ ../net/net.h
  ../player/player.h
  /root/musicplayer/select/select.c
  /root/musicplayer/select/select.h
