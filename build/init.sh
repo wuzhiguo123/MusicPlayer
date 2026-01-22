@@ -10,5 +10,5 @@ semid=`ipcs | grep 0x000003e8 | awk {'print $2'}`
 
 if [ ! -z $semid ]; then
     ipcrm -s $semid
-if
+fi
 mkfifo cmd_fifo

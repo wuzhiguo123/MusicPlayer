@@ -30,8 +30,13 @@ CMakeFiles/MusicPlayer.dir/net/net.c.o: ../player/player.h
 CMakeFiles/MusicPlayer.dir/net/net.c.o: ../select/select.h
 CMakeFiles/MusicPlayer.dir/net/net.c.o: ../net/net.c
 CMakeFiles/MusicPlayer.dir/net/net.c.o: ../net/net.h
+CMakeFiles/MusicPlayer.dir/net/net.c.o: /usr/local/include/json-c/json_config.h
+CMakeFiles/MusicPlayer.dir/net/net.c.o: /usr/local/include/json-c/json_inttypes.h
+CMakeFiles/MusicPlayer.dir/net/net.c.o: /usr/local/include/json-c/json_object.h
 CMakeFiles/MusicPlayer.dir/net/net.c.o: /usr/local/include/json-c/json_object_iterator.h
+CMakeFiles/MusicPlayer.dir/net/net.c.o: /usr/local/include/json-c/json_tokener.h
 CMakeFiles/MusicPlayer.dir/net/net.c.o: /usr/local/include/json-c/json_types.h
+CMakeFiles/MusicPlayer.dir/net/net.c.o: /usr/local/include/json-c/printbuf.h
 
 CMakeFiles/MusicPlayer.dir/player/player.c.o: ../device/device.h
 CMakeFiles/MusicPlayer.dir/player/player.c.o: ../musiclink/link.h
