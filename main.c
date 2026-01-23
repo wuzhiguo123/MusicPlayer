@@ -2,36 +2,40 @@
 #include "musiclink/link.h"
 #include "player.h"
 #include "net/net.h"
+#include <signal.h>
 #include <stdlib.h>
 #include "device.h"
 #include "main.h"
 extern MusicNode* music_head;
 void CheckMusicList()
 {
-    printf("%p",music_head);
 
     MusicNode* cur = music_head;
+    printf("_________________________________MUSIC_HEAD:%p\n",music_head);
+    int count = 0;
     while(cur)
     {
-        printf("name:%s",cur->music_name);
-
+        printf("%s\n",cur->music_name);
         cur = cur->next;
+        count++;
     }
-    printf("\n");
+    printf("一共%d首歌\n",count);
+
 }
 void ShowMenu()
 {
     system("clear");
     printf("\t1.开始播放\t2.结束播放\n");
-    printf("\t3.暂停播放\t4.结束播放 \n");
+    printf("\t3.暂停播放\t4.继续播放 \n");
     printf("\t5.下一首\t6.上一首\n");
     printf("\t7.增加音量\t8.减少音量\n");
-    printf("\t9.单曲循环\t10.结束播放\n");
+    printf("\t9.单曲循环\t10.顺序播放\n");
 
 }
 int main()
 {
     system("bash init.sh");
+
     //初始化监听集合
     InitSelect();
     //初始化歌曲链表
@@ -41,6 +45,7 @@ int main()
     }
     //初始化共享内存
     InitShm();
+    InitSem();
 
     SetVolume(DEFAULT_VOLUME);
 
@@ -56,11 +61,14 @@ int main()
     }
 
     //获取音乐文件名
-    GetMusicName("其他");
-
-    // CheckMusicList();
     ShowMenu();
+    GetMusicName("其他");
     MySelect();
+
+
+
+    CheckMusicList();
+ 
 
     while(1)
     {}

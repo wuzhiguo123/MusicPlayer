@@ -5,6 +5,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
+#include "main.h"
 
 MusicNode* music_head = NULL;
 
@@ -16,7 +18,7 @@ int InitMusicLink()
         perror("malloc() error");
         exit(-1);
     }
-
+    music_head->music_name[0] = 0;
     music_head->next = NULL;
     music_head->prev = NULL;
 
@@ -25,9 +27,18 @@ int InitMusicLink()
 }
 void InsertMusic(const char* name)
 {
+    printf("++++++++++++++++name:%s\n",name);
+    printf("MUSIC_HEAD_P:%p\n",music_head);
     if(music_head == NULL)
     {
         music_head = malloc(sizeof(MusicNode));
+        music_head->music_name[0] = 0;
+    }
+    if(music_head->music_name[0] == 0)
+    {
+        strcpy(music_head->music_name,name);
+        printf("MUSIC_HEAD->NAME:%s  NAME:%s\n",music_head->music_name,name);
+        return;
     }
     MusicNode* new = malloc(sizeof(MusicNode));
     strcpy(new->music_name, name);
@@ -61,7 +72,21 @@ int LinkMusicList(const char* music_name)
     for(int i = 0; i < json_object_array_length(music_array); i++)
     {
         struct json_object* name = json_object_array_get_idx(music_array, i);
+        // printf("#####################%s\n",json_object_get_string(name));
         InsertMusic(json_object_get_string(name));
     }
+    CheckMusicList();
     return 0;
+}
+
+void ClearMusicList()
+{
+    MusicNode* p = music_head;
+    while(p)
+    {
+        MusicNode* q = p->next;
+        free(p);
+        p = q;
+    }
+    music_head = NULL;
 }

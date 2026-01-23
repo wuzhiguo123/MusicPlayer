@@ -51,11 +51,13 @@ int SetVolume(long volume)
     // 设置音量为50%
     long minv, maxv;
     snd_mixer_selem_get_playback_volume_range(elem, &minv, &maxv);
+
+    printf("Volume set to %ld%%\n",volume);
+
     volume =  minv + volume * (maxv - minv) / 100;
     if ((err = snd_mixer_selem_set_playback_volume_all(elem, volume)) < 0) {
         fprintf(stderr, "Error setting volume: %s\n", snd_strerror(err));
-    } else {
-        printf("Volume set to 50%%\n");
+        printf("设置失败！\n");
     }  
     // 清理
     snd_mixer_selem_id_free(sid);

@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <sys/socket.h>
+#include <sys/types.h>
 #include <unistd.h>
 
 void SendInfo(struct json_object* snd_obj,int fd)
@@ -15,7 +16,7 @@ void SendInfo(struct json_object* snd_obj,int fd)
     int len = 0;
     //序列化
     const char* info = json_object_to_json_string(snd_obj);
-    printf("%s\n",info);
+   
     if(info == NULL)
     {
         perror("jason_object_to_json_string() error");
@@ -24,7 +25,7 @@ void SendInfo(struct json_object* snd_obj,int fd)
     len = strlen(info);
     memcpy(buffer, &len, sizeof(int));
     memcpy(buffer+sizeof(int),info , len);
-    // printf("BUFFER %s\n",buffer);
+    printf("[SERVER SEND]%s\n",info);
     if(send(fd,buffer,len+4,0)  < 0)
     {
         perror("send() error");
@@ -41,9 +42,17 @@ void* ReciveMusicInfo(void* arg)
 
     while(1)
     {
+
         while(1)
         {
-            size+=recv(conn_fd, buffer+size, sizeof(int) - size, 0);
+            ssize_t r =recv(conn_fd, buffer+size, sizeof(int) - size, 0);
+            if(r == (ssize_t)0)
+            {
+                close(conn_fd);
+                printf("断开连接！\n");
+                pthread_exit(NULL);
+            }
+            size = (size_t)r;
             if(size == sizeof(int))
                 break;
         }
@@ -52,12 +61,19 @@ void* ReciveMusicInfo(void* arg)
         memset(buffer, 0, sizeof(buffer));
         while(1)
         {
-            size += recv(conn_fd, buffer+size, len - size, 0);
+            ssize_t r = recv(conn_fd, buffer+size, len - size, 0); 
+            if(r == (ssize_t)0)
+            {
+                close(conn_fd);
+                printf("断开连接！\n");
+                pthread_exit(NULL);
+            }
+            size += (size_t)r;
             if(size == len)
                 break;
         }
         size = 0;
-        printf("%s\n",buffer);
+        printf("[SERVER REC]%s\n",buffer);
 
         //把收到的字符串转换成JSON对象
         struct json_object* music_info = json_tokener_parse(buffer);
@@ -74,10 +90,15 @@ void* ReciveMusicInfo(void* arg)
             json_object_array_add(music_array, json_object_new_string("其他/童话.mp3"));
             json_object_array_add(music_array, json_object_new_string("其他/那些年.mp3"));
             json_object_array_add(music_array, json_object_new_string("其他/一直想着他.mp3"));
+            // json_object_array_add(music_array, json_object_new_string("其他/1.mp3"));
+            // json_object_array_add(music_array, json_object_new_string("其他/2.mp3"));
+            // json_object_array_add(music_array, json_object_new_string("其他/3.mp3"));
+            // json_object_array_add(music_array, json_object_new_string("其他/4.mp3"));
+            // json_object_array_add(music_array, json_object_new_string("其他/5.mp3"));
 
             json_object_object_add(snd_obj, "music", music_array);
-
             SendInfo(snd_obj,conn_fd);
+            sleep(1);
 
         }
         memset(buffer, 0, sizeof(buffer));
@@ -112,24 +133,77 @@ int main()
     {
         perror("listen() error");
     }
-
-    struct sockaddr_in client_addr;
-    int len = sizeof(client_addr);
-    int conn_fd = accept(listen_fd,(struct sockaddr*)&client_addr ,&len);
-    if(conn_fd < 0)
-    {
-        perror("accept() error");
-    }
-    printf("connect success ,fd = %d\n",conn_fd);
-    
-    pthread_t id;
-    pthread_create(&id, NULL, ReciveMusicInfo, &conn_fd);
     while(1)
     {
-    }
-    close(listen_fd);
-    close(conn_fd);
+        struct sockaddr_in client_addr;
+        int len = sizeof(client_addr);
+        int conn_fd = accept(listen_fd,(struct sockaddr*)&client_addr ,&len);
 
+    
+
+        if(conn_fd < 0)
+        {
+            perror("accept() error");
+        }
+        printf("connect success ,fd = %d\n",conn_fd);
+        
+        pthread_t id;
+        pthread_create(&id, NULL, ReciveMusicInfo, &conn_fd);
+
+            //测试socket播放
+        sleep(3);
+        struct json_object* obj1 = json_object_new_object();
+        json_object_object_add(obj1, "cmd", json_object_new_string("app_start"));
+        SendInfo(obj1,conn_fd);
+        json_object_put(obj1);
+
+
+        sleep(5);
+        struct json_object* obj3 = json_object_new_object();
+        json_object_object_add(obj3, "cmd", json_object_new_string("app_suspend"));
+        SendInfo(obj3,conn_fd);
+        json_object_put(obj3);
+
+        sleep(5);
+        struct json_object* obj4 = json_object_new_object();
+        json_object_object_add(obj4, "cmd", json_object_new_string("app_continue"));
+        SendInfo(obj4,conn_fd);
+        json_object_put(obj4);
+
+        sleep(5);
+        struct json_object* obj5 = json_object_new_object();
+        json_object_object_add(obj5, "cmd", json_object_new_string("app_next"));
+        SendInfo(obj5,conn_fd);
+        json_object_put(obj5);
+
+        sleep(5);
+        struct json_object* obj6 = json_object_new_object();
+        json_object_object_add(obj6, "cmd", json_object_new_string("app_prev"));
+        SendInfo(obj6,conn_fd);
+        json_object_put(obj6);
+
+        sleep(5);
+        struct json_object* obj7 = json_object_new_object();
+        json_object_object_add(obj7, "cmd", json_object_new_string("app_downvolume"));
+        SendInfo(obj7,conn_fd);
+        json_object_put(obj7);
+
+         sleep(5);
+        struct json_object* obj8 = json_object_new_object();
+        json_object_object_add(obj8, "cmd", json_object_new_string("app_upvolume"));
+        SendInfo(obj8,conn_fd);
+        json_object_put(obj8);
+
+        sleep(5);
+        struct json_object* obj2 = json_object_new_object();
+        json_object_object_add(obj2, "cmd", json_object_new_string("app_stop"));
+        SendInfo(obj2,conn_fd);
+        json_object_put(obj2);
+
+
+        pthread_join(id, NULL);
+        printf("断开连接\n");
+    }
 
     return 0;
 }
