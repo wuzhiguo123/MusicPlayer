@@ -26,7 +26,8 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../net"
   "../device"
   "../"
-  "/usr/local/include/json-c"
+  "/root/json-arm-install/include"
+  "/root/alsa-arm-install/include"
   )
 
 # Targets to which this target links.

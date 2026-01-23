@@ -14,12 +14,6 @@
 # EXTERNAL cache entries
 ########################
 
-//The ALSA (asound) include directory
-ALSA_INCLUDE_DIR:PATH=/usr/include
-
-//The ALSA (asound) library
-ALSA_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libasound.so
-
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
 
@@ -195,21 +189,11 @@ MusicPlayer_BINARY_DIR:STATIC=/root/musicplayer/build
 //Value Computed by CMake
 MusicPlayer_SOURCE_DIR:STATIC=/root/musicplayer
 
-//pkg-config executable
-PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
-
-//Path to a library.
-pkgcfg_lib_JSON-C_json-c:FILEPATH=/usr/local/lib/libjson-c.so
-
 
 ########################
 # INTERNAL cache entries
 ########################
 
-//ADVANCED property for variable: ALSA_INCLUDE_DIR
-ALSA_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: ALSA_LIBRARY
-ALSA_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_ADDR2LINE
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
@@ -272,14 +256,6 @@ CMAKE_GENERATOR_INSTANCE:INTERNAL=
 CMAKE_GENERATOR_PLATFORM:INTERNAL=
 //Name of generator toolset.
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
-//Test CMAKE_HAVE_LIBC_PTHREAD
-CMAKE_HAVE_LIBC_PTHREAD:INTERNAL=
-//Have library pthreads
-CMAKE_HAVE_PTHREADS_CREATE:INTERNAL=
-//Have library pthread
-CMAKE_HAVE_PTHREAD_CREATE:INTERNAL=1
-//Have include pthread.h
-CMAKE_HAVE_PTHREAD_H:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=/root/musicplayer
@@ -345,52 +321,4 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
-//Details about finding ALSA
-FIND_PACKAGE_MESSAGE_DETAILS_ALSA:INTERNAL=[/usr/lib/x86_64-linux-gnu/libasound.so][/usr/include][v1.2.2()]
-//Details about finding PkgConfig
-FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.29.1()]
-//Details about finding Threads
-FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
-JSON-C_CFLAGS:INTERNAL=-I/usr/local/include;-I/usr/local/include/json-c
-JSON-C_CFLAGS_I:INTERNAL=
-JSON-C_CFLAGS_OTHER:INTERNAL=
-JSON-C_FOUND:INTERNAL=1
-JSON-C_INCLUDEDIR:INTERNAL=/usr/local/include
-JSON-C_INCLUDE_DIRS:INTERNAL=/usr/local/include;/usr/local/include/json-c
-JSON-C_LDFLAGS:INTERNAL=-L/usr/local/lib;-ljson-c
-JSON-C_LDFLAGS_OTHER:INTERNAL=
-JSON-C_LIBDIR:INTERNAL=/usr/local/lib
-JSON-C_LIBRARIES:INTERNAL=json-c
-JSON-C_LIBRARY_DIRS:INTERNAL=/usr/local/lib
-JSON-C_LIBS:INTERNAL=
-JSON-C_LIBS_L:INTERNAL=
-JSON-C_LIBS_OTHER:INTERNAL=
-JSON-C_LIBS_PATHS:INTERNAL=
-JSON-C_MODULE_NAME:INTERNAL=json-c
-JSON-C_PREFIX:INTERNAL=/usr/local
-JSON-C_STATIC_CFLAGS:INTERNAL=-I/usr/local/include;-I/usr/local/include/json-c
-JSON-C_STATIC_CFLAGS_I:INTERNAL=
-JSON-C_STATIC_CFLAGS_OTHER:INTERNAL=
-JSON-C_STATIC_INCLUDE_DIRS:INTERNAL=/usr/local/include;/usr/local/include/json-c
-JSON-C_STATIC_LDFLAGS:INTERNAL=-L/usr/local/lib;-lm;-ljson-c
-JSON-C_STATIC_LDFLAGS_OTHER:INTERNAL=
-JSON-C_STATIC_LIBDIR:INTERNAL=
-JSON-C_STATIC_LIBRARIES:INTERNAL=m;json-c
-JSON-C_STATIC_LIBRARY_DIRS:INTERNAL=/usr/local/lib
-JSON-C_STATIC_LIBS:INTERNAL=
-JSON-C_STATIC_LIBS_L:INTERNAL=
-JSON-C_STATIC_LIBS_OTHER:INTERNAL=
-JSON-C_STATIC_LIBS_PATHS:INTERNAL=
-JSON-C_VERSION:INTERNAL=0.18.99
-JSON-C_json-c_INCLUDEDIR:INTERNAL=
-JSON-C_json-c_LIBDIR:INTERNAL=
-JSON-C_json-c_PREFIX:INTERNAL=
-JSON-C_json-c_VERSION:INTERNAL=
-//ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
-PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
-__pkg_config_arguments_JSON-C:INTERNAL=REQUIRED;json-c
-__pkg_config_checked_JSON-C:INTERNAL=1
-//ADVANCED property for variable: pkgcfg_lib_JSON-C_json-c
-pkgcfg_lib_JSON-C_json-c-ADVANCED:INTERNAL=1
-prefix_result:INTERNAL=/usr/local/lib
 

@@ -60,80 +60,80 @@ include CMakeFiles/MusicPlayer.dir/flags.make
 CMakeFiles/MusicPlayer.dir/player/player.c.o: CMakeFiles/MusicPlayer.dir/flags.make
 CMakeFiles/MusicPlayer.dir/player/player.c.o: ../player/player.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/musicplayer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/MusicPlayer.dir/player/player.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MusicPlayer.dir/player/player.c.o   -c /root/musicplayer/player/player.c
+	aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MusicPlayer.dir/player/player.c.o   -c /root/musicplayer/player/player.c
 
 CMakeFiles/MusicPlayer.dir/player/player.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicPlayer.dir/player/player.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/musicplayer/player/player.c > CMakeFiles/MusicPlayer.dir/player/player.c.i
+	aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/musicplayer/player/player.c > CMakeFiles/MusicPlayer.dir/player/player.c.i
 
 CMakeFiles/MusicPlayer.dir/player/player.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicPlayer.dir/player/player.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/musicplayer/player/player.c -o CMakeFiles/MusicPlayer.dir/player/player.c.s
+	aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/musicplayer/player/player.c -o CMakeFiles/MusicPlayer.dir/player/player.c.s
 
 CMakeFiles/MusicPlayer.dir/musiclink/link.c.o: CMakeFiles/MusicPlayer.dir/flags.make
 CMakeFiles/MusicPlayer.dir/musiclink/link.c.o: ../musiclink/link.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/musicplayer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/MusicPlayer.dir/musiclink/link.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MusicPlayer.dir/musiclink/link.c.o   -c /root/musicplayer/musiclink/link.c
+	aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MusicPlayer.dir/musiclink/link.c.o   -c /root/musicplayer/musiclink/link.c
 
 CMakeFiles/MusicPlayer.dir/musiclink/link.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicPlayer.dir/musiclink/link.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/musicplayer/musiclink/link.c > CMakeFiles/MusicPlayer.dir/musiclink/link.c.i
+	aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/musicplayer/musiclink/link.c > CMakeFiles/MusicPlayer.dir/musiclink/link.c.i
 
 CMakeFiles/MusicPlayer.dir/musiclink/link.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicPlayer.dir/musiclink/link.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/musicplayer/musiclink/link.c -o CMakeFiles/MusicPlayer.dir/musiclink/link.c.s
+	aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/musicplayer/musiclink/link.c -o CMakeFiles/MusicPlayer.dir/musiclink/link.c.s
 
 CMakeFiles/MusicPlayer.dir/select/select.c.o: CMakeFiles/MusicPlayer.dir/flags.make
 CMakeFiles/MusicPlayer.dir/select/select.c.o: ../select/select.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/musicplayer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/MusicPlayer.dir/select/select.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MusicPlayer.dir/select/select.c.o   -c /root/musicplayer/select/select.c
+	aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MusicPlayer.dir/select/select.c.o   -c /root/musicplayer/select/select.c
 
 CMakeFiles/MusicPlayer.dir/select/select.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicPlayer.dir/select/select.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/musicplayer/select/select.c > CMakeFiles/MusicPlayer.dir/select/select.c.i
+	aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/musicplayer/select/select.c > CMakeFiles/MusicPlayer.dir/select/select.c.i
 
 CMakeFiles/MusicPlayer.dir/select/select.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicPlayer.dir/select/select.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/musicplayer/select/select.c -o CMakeFiles/MusicPlayer.dir/select/select.c.s
+	aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/musicplayer/select/select.c -o CMakeFiles/MusicPlayer.dir/select/select.c.s
 
 CMakeFiles/MusicPlayer.dir/main.c.o: CMakeFiles/MusicPlayer.dir/flags.make
 CMakeFiles/MusicPlayer.dir/main.c.o: ../main.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/musicplayer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/MusicPlayer.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MusicPlayer.dir/main.c.o   -c /root/musicplayer/main.c
+	aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MusicPlayer.dir/main.c.o   -c /root/musicplayer/main.c
 
 CMakeFiles/MusicPlayer.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicPlayer.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/musicplayer/main.c > CMakeFiles/MusicPlayer.dir/main.c.i
+	aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/musicplayer/main.c > CMakeFiles/MusicPlayer.dir/main.c.i
 
 CMakeFiles/MusicPlayer.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicPlayer.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/musicplayer/main.c -o CMakeFiles/MusicPlayer.dir/main.c.s
+	aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/musicplayer/main.c -o CMakeFiles/MusicPlayer.dir/main.c.s
 
 CMakeFiles/MusicPlayer.dir/net/net.c.o: CMakeFiles/MusicPlayer.dir/flags.make
 CMakeFiles/MusicPlayer.dir/net/net.c.o: ../net/net.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/musicplayer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/MusicPlayer.dir/net/net.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MusicPlayer.dir/net/net.c.o   -c /root/musicplayer/net/net.c
+	aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MusicPlayer.dir/net/net.c.o   -c /root/musicplayer/net/net.c
 
 CMakeFiles/MusicPlayer.dir/net/net.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicPlayer.dir/net/net.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/musicplayer/net/net.c > CMakeFiles/MusicPlayer.dir/net/net.c.i
+	aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/musicplayer/net/net.c > CMakeFiles/MusicPlayer.dir/net/net.c.i
 
 CMakeFiles/MusicPlayer.dir/net/net.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicPlayer.dir/net/net.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/musicplayer/net/net.c -o CMakeFiles/MusicPlayer.dir/net/net.c.s
+	aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/musicplayer/net/net.c -o CMakeFiles/MusicPlayer.dir/net/net.c.s
 
 CMakeFiles/MusicPlayer.dir/device/device.c.o: CMakeFiles/MusicPlayer.dir/flags.make
 CMakeFiles/MusicPlayer.dir/device/device.c.o: ../device/device.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/musicplayer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/MusicPlayer.dir/device/device.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MusicPlayer.dir/device/device.c.o   -c /root/musicplayer/device/device.c
+	aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MusicPlayer.dir/device/device.c.o   -c /root/musicplayer/device/device.c
 
 CMakeFiles/MusicPlayer.dir/device/device.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicPlayer.dir/device/device.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/musicplayer/device/device.c > CMakeFiles/MusicPlayer.dir/device/device.c.i
+	aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/musicplayer/device/device.c > CMakeFiles/MusicPlayer.dir/device/device.c.i
 
 CMakeFiles/MusicPlayer.dir/device/device.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicPlayer.dir/device/device.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/musicplayer/device/device.c -o CMakeFiles/MusicPlayer.dir/device/device.c.s
+	aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/musicplayer/device/device.c -o CMakeFiles/MusicPlayer.dir/device/device.c.s
 
 # Object files for target MusicPlayer
 MusicPlayer_OBJECTS = \
@@ -154,7 +154,8 @@ MusicPlayer: CMakeFiles/MusicPlayer.dir/main.c.o
 MusicPlayer: CMakeFiles/MusicPlayer.dir/net/net.c.o
 MusicPlayer: CMakeFiles/MusicPlayer.dir/device/device.c.o
 MusicPlayer: CMakeFiles/MusicPlayer.dir/build.make
-MusicPlayer: /usr/lib/x86_64-linux-gnu/libasound.so
+MusicPlayer: /root/json-arm-install/lib/libjson-c.so.5.4.0
+MusicPlayer: /root/alsa-arm-install/lib/libasound.so.2.0.0
 MusicPlayer: CMakeFiles/MusicPlayer.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/musicplayer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable MusicPlayer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MusicPlayer.dir/link.txt --verbose=$(VERBOSE)
