@@ -60,15 +60,15 @@ include CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/net/server.c.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/net/server.c.o: ../net/server.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/musicplayer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/server.dir/net/server.c.o"
-	aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/server.dir/net/server.c.o   -c /root/musicplayer/net/server.c
+	/usr/bin/aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/server.dir/net/server.c.o   -c /root/musicplayer/net/server.c
 
 CMakeFiles/server.dir/net/server.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/server.dir/net/server.c.i"
-	aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/musicplayer/net/server.c > CMakeFiles/server.dir/net/server.c.i
+	/usr/bin/aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /root/musicplayer/net/server.c > CMakeFiles/server.dir/net/server.c.i
 
 CMakeFiles/server.dir/net/server.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/server.dir/net/server.c.s"
-	aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/musicplayer/net/server.c -o CMakeFiles/server.dir/net/server.c.s
+	/usr/bin/aarch64-linux-gnu-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /root/musicplayer/net/server.c -o CMakeFiles/server.dir/net/server.c.s
 
 # Object files for target server
 server_OBJECTS = \
