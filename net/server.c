@@ -151,54 +151,54 @@ int main()
         pthread_create(&id, NULL, ReciveMusicInfo, &conn_fd);
 
             //测试socket播放
-        sleep(3);
-        struct json_object* obj1 = json_object_new_object();
-        json_object_object_add(obj1, "cmd", json_object_new_string("app_start"));
-        SendInfo(obj1,conn_fd);
-        json_object_put(obj1);
+        // sleep(3);
+        // struct json_object* obj1 = json_object_new_object();
+        // json_object_object_add(obj1, "cmd", json_object_new_string("app_start"));
+        // SendInfo(obj1,conn_fd);
+        // json_object_put(obj1);
 
 
-        sleep(5);
-        struct json_object* obj3 = json_object_new_object();
-        json_object_object_add(obj3, "cmd", json_object_new_string("app_suspend"));
-        SendInfo(obj3,conn_fd);
-        json_object_put(obj3);
+        // sleep(5);
+        // struct json_object* obj3 = json_object_new_object();
+        // json_object_object_add(obj3, "cmd", json_object_new_string("app_suspend"));
+        // SendInfo(obj3,conn_fd);
+        // json_object_put(obj3);
 
-        sleep(5);
-        struct json_object* obj4 = json_object_new_object();
-        json_object_object_add(obj4, "cmd", json_object_new_string("app_continue"));
-        SendInfo(obj4,conn_fd);
-        json_object_put(obj4);
+        // sleep(5);
+        // struct json_object* obj4 = json_object_new_object();
+        // json_object_object_add(obj4, "cmd", json_object_new_string("app_continue"));
+        // SendInfo(obj4,conn_fd);
+        // json_object_put(obj4);
 
-        sleep(5);
-        struct json_object* obj5 = json_object_new_object();
-        json_object_object_add(obj5, "cmd", json_object_new_string("app_next"));
-        SendInfo(obj5,conn_fd);
-        json_object_put(obj5);
+        // sleep(5);
+        // struct json_object* obj5 = json_object_new_object();
+        // json_object_object_add(obj5, "cmd", json_object_new_string("app_next"));
+        // SendInfo(obj5,conn_fd);
+        // json_object_put(obj5);
 
-        sleep(5);
-        struct json_object* obj6 = json_object_new_object();
-        json_object_object_add(obj6, "cmd", json_object_new_string("app_prev"));
-        SendInfo(obj6,conn_fd);
-        json_object_put(obj6);
+        // sleep(5);
+        // struct json_object* obj6 = json_object_new_object();
+        // json_object_object_add(obj6, "cmd", json_object_new_string("app_prev"));
+        // SendInfo(obj6,conn_fd);
+        // json_object_put(obj6);
 
-        sleep(5);
-        struct json_object* obj7 = json_object_new_object();
-        json_object_object_add(obj7, "cmd", json_object_new_string("app_downvolume"));
-        SendInfo(obj7,conn_fd);
-        json_object_put(obj7);
+        // sleep(5);
+        // struct json_object* obj7 = json_object_new_object();
+        // json_object_object_add(obj7, "cmd", json_object_new_string("app_downvolume"));
+        // SendInfo(obj7,conn_fd);
+        // json_object_put(obj7);
 
-         sleep(5);
-        struct json_object* obj8 = json_object_new_object();
-        json_object_object_add(obj8, "cmd", json_object_new_string("app_upvolume"));
-        SendInfo(obj8,conn_fd);
-        json_object_put(obj8);
+        //  sleep(5);
+        // struct json_object* obj8 = json_object_new_object();
+        // json_object_object_add(obj8, "cmd", json_object_new_string("app_upvolume"));
+        // SendInfo(obj8,conn_fd);
+        // json_object_put(obj8);
 
-        sleep(5);
-        struct json_object* obj2 = json_object_new_object();
-        json_object_object_add(obj2, "cmd", json_object_new_string("app_stop"));
-        SendInfo(obj2,conn_fd);
-        json_object_put(obj2);
+        // sleep(5);
+        // struct json_object* obj2 = json_object_new_object();
+        // json_object_object_add(obj2, "cmd", json_object_new_string("app_stop"));
+        // SendInfo(obj2,conn_fd);
+        // json_object_put(obj2);
 
 
         pthread_join(id, NULL);

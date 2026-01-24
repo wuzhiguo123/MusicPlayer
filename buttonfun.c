@@ -57,10 +57,12 @@ int main()
             else if(state == STATE_FIRST_RELEASE)
             {
                 printf("双击\n");
+                //多长时间触发一次定时器信号
                 state = STATE_IDLE;
                 tv.it_value.tv_sec = 0;
                 tv.it_value.tv_usec = 0;
 
+                //多长时间重复启动一次定时器
                 tv.it_interval.tv_sec = 0;
                 tv.it_interval.tv_usec = 0;
                 setitimer(ITIMER_REAL, &tv, NULL);

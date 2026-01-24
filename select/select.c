@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include "player.h"
 #include "net.h"
+#include "device.h"
 #include <sys/select.h>
 #include <unistd.h>
 #include <pthread.h>
@@ -13,6 +14,7 @@ extern fd_set READSET;
 extern pthread_t tid;
 extern int g_maxfd;
 extern int g_sockfd;
+extern int g_button_fd;
 void InitSelect()
 {
     FD_ZERO(&READSET);
@@ -87,6 +89,11 @@ void MySelect()
         else if(FD_ISSET(g_sockfd, &TMPSET))//网络
         { 
             ReadSocket();
+        }
+
+        else if(FD_ISSET(g_button_fd,&TMPSET))
+        {
+            ReadButton();
         }
     }
 

@@ -1,7 +1,7 @@
 #include "net.h"
 #include "device.h"
-#include "json_object_iterator.h"
-#include "json_tokener.h"
+// #include <json-c/json_object_iterator.h>
+#include <json-c//json.h>
 #include "link.h"
 #include "main.h"
 #include "player.h"
@@ -9,7 +9,7 @@
 #include <arpa/inet.h>
 #include <errno.h>
 #include <json-c/json.h>
-#include <json-c/json_object.h>
+// #include <json-c/json_object.h>
 #include <netinet/in.h>
 #include <pthread.h>
 #include <stddef.h>

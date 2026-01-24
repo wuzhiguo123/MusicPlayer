@@ -46,6 +46,7 @@ int main()
     //初始化共享内存
     InitShm();
     InitSem();
+    InitButton();
 
     SetVolume(DEFAULT_VOLUME);
 
