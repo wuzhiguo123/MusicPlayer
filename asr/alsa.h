@@ -5,7 +5,7 @@
 #define RATE             44100
 
 int InitAlsa();
-void resample_linear(int16_t *input, int in_len,
+void ResampleLinear(int16_t *input, int in_len,
                           int16_t *output, int out_len);
 
 #endif

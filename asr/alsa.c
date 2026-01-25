@@ -1,10 +1,11 @@
 #include "alsa.h"
+#include <alloca.h>
 #include <stdio.h>
 snd_pcm_t *pcmp;
 snd_pcm_uframes_t frams_per_buffer = 1024;
 unsigned int sample_rate = RATE;
 int InitAlsa(){
-    	int ret;
+    int ret;
 
 	// 1.打开PCM设备
 	ret = snd_pcm_open(&pcmp, RECORD_DEVICE, SND_PCM_STREAM_CAPTURE, 0);

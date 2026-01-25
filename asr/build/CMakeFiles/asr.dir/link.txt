@@ -1,0 +1,1 @@
+/usr/bin/aarch64-linux-gnu-gcc    CMakeFiles/asr.dir/main.c.o CMakeFiles/asr.dir/alsa.c.o CMakeFiles/asr.dir/sherpa.c.o  -o asr  -Wl,-rpath,/root/model/lib:/root/alsa-arm-install/lib /root/model/lib/libonnxruntime.so /root/model/lib/libsherpa-onnx-c-api.so /root/alsa-arm-install/lib/libasound.so.2.0.0 
