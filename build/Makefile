@@ -136,6 +136,33 @@ MusicPlayer/fast:
 	$(MAKE) -f CMakeFiles/MusicPlayer.dir/build.make CMakeFiles/MusicPlayer.dir/build
 .PHONY : MusicPlayer/fast
 
+asr/alsa.o: asr/alsa.c.o
+
+.PHONY : asr/alsa.o
+
+# target to build an object file
+asr/alsa.c.o:
+	$(MAKE) -f CMakeFiles/MusicPlayer.dir/build.make CMakeFiles/MusicPlayer.dir/asr/alsa.c.o
+.PHONY : asr/alsa.c.o
+
+asr/alsa.i: asr/alsa.c.i
+
+.PHONY : asr/alsa.i
+
+# target to preprocess a source file
+asr/alsa.c.i:
+	$(MAKE) -f CMakeFiles/MusicPlayer.dir/build.make CMakeFiles/MusicPlayer.dir/asr/alsa.c.i
+.PHONY : asr/alsa.c.i
+
+asr/alsa.s: asr/alsa.c.s
+
+.PHONY : asr/alsa.s
+
+# target to generate assembly for a file
+asr/alsa.c.s:
+	$(MAKE) -f CMakeFiles/MusicPlayer.dir/build.make CMakeFiles/MusicPlayer.dir/asr/alsa.c.s
+.PHONY : asr/alsa.c.s
+
 device/device.o: device/device.c.o
 
 .PHONY : device/device.o
@@ -335,6 +362,9 @@ help:
 	@echo "... server"
 	@echo "... edit_cache"
 	@echo "... MusicPlayer"
+	@echo "... asr/alsa.o"
+	@echo "... asr/alsa.i"
+	@echo "... asr/alsa.s"
 	@echo "... device/device.o"
 	@echo "... device/device.i"
 	@echo "... device/device.s"

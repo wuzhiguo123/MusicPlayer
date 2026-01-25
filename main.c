@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include "device.h"
 #include "main.h"
+#include "alsa.h"
 extern MusicNode* music_head;
 void CheckMusicList()
 {
@@ -47,6 +48,7 @@ int main()
     InitShm();
     InitSem();
     InitButton();
+    InitAlsa();
 
     SetVolume(DEFAULT_VOLUME);
 

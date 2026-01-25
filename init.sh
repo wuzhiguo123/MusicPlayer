@@ -1,7 +1,15 @@
 #!/bin/bash
 
-id=`ipcs | grep 0x6603fd03 | awk {'print $2'}`
+shmid=`ipcs | grep 0x662301cd | awk {'print $2'}`
 
-if [ ! -z $id ]; then
-    ipcrm -m $id
+if [ ! -z $shmid ]; then
+	ipcrm -m $shmid
 fi
+
+semid=`ipcs | grep 0x000003e8 | awk {'print $2'}`
+
+if [ ! -z $semid ]; then
+	ipcrm -s $semid
+fi
+
+rm -rf ./cmd_fifo

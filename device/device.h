@@ -1,5 +1,6 @@
 #ifndef _DEVICE_H
 #define _DEVICE_H
+#include <alsa/asoundlib.h>
 
 #define DEFAULT_VOLUME 80
 #define CARD_NAME "hw:audiocodec"

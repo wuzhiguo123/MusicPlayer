@@ -1,21 +1,21 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
 Change Dir: /root/musicplayer/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_7f5a7/fast && /usr/bin/make -f CMakeFiles/cmTC_7f5a7.dir/build.make CMakeFiles/cmTC_7f5a7.dir/build
+Run Build Command(s):/usr/bin/make cmTC_752be/fast && /usr/bin/make -f CMakeFiles/cmTC_752be.dir/build.make CMakeFiles/cmTC_752be.dir/build
 make[1]: Entering directory '/root/musicplayer/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_7f5a7.dir/src.c.o
-/usr/bin/aarch64-linux-gnu-gcc   -DCMAKE_HAVE_LIBC_PTHREAD   -std=c11 -o CMakeFiles/cmTC_7f5a7.dir/src.c.o   -c /root/musicplayer/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_7f5a7
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7f5a7.dir/link.txt --verbose=1
-/usr/bin/aarch64-linux-gnu-gcc  -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_7f5a7.dir/src.c.o  -o cmTC_7f5a7 
-/usr/lib/gcc-cross/aarch64-linux-gnu/9/../../../../aarch64-linux-gnu/bin/ld: CMakeFiles/cmTC_7f5a7.dir/src.c.o: in function `main':
+Building C object CMakeFiles/cmTC_752be.dir/src.c.o
+/usr/bin/aarch64-linux-gnu-gcc   -DCMAKE_HAVE_LIBC_PTHREAD   -std=gnu11 -o CMakeFiles/cmTC_752be.dir/src.c.o   -c /root/musicplayer/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_752be
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_752be.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-gcc  -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_752be.dir/src.c.o  -o cmTC_752be 
+/usr/lib/gcc-cross/aarch64-linux-gnu/9/../../../../aarch64-linux-gnu/bin/ld: CMakeFiles/cmTC_752be.dir/src.c.o: in function `main':
 src.c:(.text+0x48): undefined reference to `pthread_create'
 /usr/lib/gcc-cross/aarch64-linux-gnu/9/../../../../aarch64-linux-gnu/bin/ld: src.c:(.text+0x50): undefined reference to `pthread_detach'
 /usr/lib/gcc-cross/aarch64-linux-gnu/9/../../../../aarch64-linux-gnu/bin/ld: src.c:(.text+0x5c): undefined reference to `pthread_join'
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_7f5a7.dir/build.make:87: cmTC_7f5a7] Error 1
+make[1]: *** [CMakeFiles/cmTC_752be.dir/build.make:87: cmTC_752be] Error 1
 make[1]: Leaving directory '/root/musicplayer/build/CMakeFiles/CMakeTmp'
-make: *** [Makefile:121: cmTC_7f5a7/fast] Error 2
+make: *** [Makefile:121: cmTC_752be/fast] Error 2
 
 
 Source file was:
@@ -41,18 +41,18 @@ int main(void)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /root/musicplayer/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_1001e/fast && /usr/bin/make -f CMakeFiles/cmTC_1001e.dir/build.make CMakeFiles/cmTC_1001e.dir/build
+Run Build Command(s):/usr/bin/make cmTC_d5d2a/fast && /usr/bin/make -f CMakeFiles/cmTC_d5d2a.dir/build.make CMakeFiles/cmTC_d5d2a.dir/build
 make[1]: Entering directory '/root/musicplayer/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_1001e.dir/CheckFunctionExists.c.o
-/usr/bin/aarch64-linux-gnu-gcc   -DCHECK_FUNCTION_EXISTS=pthread_create   -std=c11 -o CMakeFiles/cmTC_1001e.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_1001e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1001e.dir/link.txt --verbose=1
-/usr/bin/aarch64-linux-gnu-gcc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_1001e.dir/CheckFunctionExists.c.o  -o cmTC_1001e  -lpthreads 
+Building C object CMakeFiles/cmTC_d5d2a.dir/CheckFunctionExists.c.o
+/usr/bin/aarch64-linux-gnu-gcc   -DCHECK_FUNCTION_EXISTS=pthread_create   -std=gnu11 -o CMakeFiles/cmTC_d5d2a.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d5d2a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d5d2a.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-gcc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_d5d2a.dir/CheckFunctionExists.c.o  -o cmTC_d5d2a  -lpthreads 
 /usr/lib/gcc-cross/aarch64-linux-gnu/9/../../../../aarch64-linux-gnu/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_1001e.dir/build.make:87: cmTC_1001e] Error 1
+make[1]: *** [CMakeFiles/cmTC_d5d2a.dir/build.make:87: cmTC_d5d2a] Error 1
 make[1]: Leaving directory '/root/musicplayer/build/CMakeFiles/CMakeTmp'
-make: *** [Makefile:121: cmTC_1001e/fast] Error 2
+make: *** [Makefile:121: cmTC_d5d2a/fast] Error 2
 
 
 

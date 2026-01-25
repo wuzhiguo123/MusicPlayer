@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/MusicPlayer.dir/asr/alsa.c.o"
   "CMakeFiles/MusicPlayer.dir/device/device.c.o"
   "CMakeFiles/MusicPlayer.dir/main.c.o"
   "CMakeFiles/MusicPlayer.dir/musiclink/link.c.o"

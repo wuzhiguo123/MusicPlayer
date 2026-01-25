@@ -1,6 +1,5 @@
 #include "device.h"
 #include "player.h"
-#include <alsa/asoundlib.h>
 #include <sys/select.h>
 #include <linux/input.h>
 #include <signal.h>
@@ -10,6 +9,7 @@ extern int g_maxfd;
 extern fd_set READSET;
 extern int g_start_flag;
 extern int g_suspend_flag;
+struct timeval old,new;
 BUTTON_STATE state = STATE_IDLE;
 struct itimerval tv;
 int SetVolume(long volume)
@@ -178,7 +178,6 @@ void Handle(int sig)
 void ReadButton()
 {
     struct input_event ev;
-    struct timeval old,new;
     int ret = read(g_button_fd, &ev, sizeof(ev));
     signal(SIGALRM, Handle);
     if(ret == -1)
