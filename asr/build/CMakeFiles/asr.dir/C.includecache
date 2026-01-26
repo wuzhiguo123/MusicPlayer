@@ -152,14 +152,6 @@ alsa/asoundlib.h
 
 /root/alsa-arm-install/include/alsa/version.h
 
-/root/musicplayer/asr/alsa.c
-alsa.h
-/root/musicplayer/asr/alsa.h
-alloca.h
--
-stdio.h
--
-
 /root/musicplayer/asr/alsa.h
 alsa/asoundlib.h
 -
