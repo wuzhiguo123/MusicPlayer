@@ -179,6 +179,8 @@ stdio.h
 -
 stdlib.h
 -
+string.h
+-
 
 /root/musicplayer/asr/sherpa.h
 
