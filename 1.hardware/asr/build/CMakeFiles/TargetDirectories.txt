@@ -1,3 +1,0 @@
-/root/musicplayer/asr/build/CMakeFiles/rebuild_cache.dir
-/root/musicplayer/asr/build/CMakeFiles/edit_cache.dir
-/root/musicplayer/asr/build/CMakeFiles/asr.dir
