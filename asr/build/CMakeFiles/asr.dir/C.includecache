@@ -152,27 +152,27 @@ alsa/asoundlib.h
 
 /root/alsa-arm-install/include/alsa/version.h
 
+/root/model/include/sherpa-onnx/c-api/c-api.h
+stdint.h
+-
+
 /root/musicplayer/asr/alsa.h
 alsa/asoundlib.h
 -
 
 /root/musicplayer/asr/main.c
-alsa.h
-/root/musicplayer/asr/alsa.h
-alsa/asoundlib.h
-/root/musicplayer/asr/alsa/asoundlib.h
-sherpa.h
-/root/musicplayer/asr/sherpa.h
-asm-generic/errno-base.h
--
-stdint.h
--
 stdio.h
 -
-stdlib.h
+signal.h
 -
-string.h
+fcntl.h
 -
+alsa.h
+/root/musicplayer/asr/alsa.h
+sherpa.h
+/root/musicplayer/asr/sherpa.h
+sherpa-onnx/c-api/c-api.h
+/root/musicplayer/asr/sherpa-onnx/c-api/c-api.h
 
 /root/musicplayer/asr/sherpa.h
 

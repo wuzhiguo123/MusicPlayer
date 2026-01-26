@@ -47,6 +47,7 @@ CMakeFiles/asr.dir/main.c.o
  /root/alsa-arm-install/include/alsa/ump.h
  /root/alsa-arm-install/include/alsa/ump_msg.h
  /root/alsa-arm-install/include/alsa/version.h
+ /root/model/include/sherpa-onnx/c-api/c-api.h
  /root/musicplayer/asr/alsa.h
  /root/musicplayer/asr/main.c
  /root/musicplayer/asr/sherpa.h

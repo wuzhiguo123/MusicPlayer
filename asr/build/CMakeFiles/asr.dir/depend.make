@@ -46,6 +46,7 @@ CMakeFiles/asr.dir/main.c.o: /root/alsa-arm-install/include/alsa/timer.h
 CMakeFiles/asr.dir/main.c.o: /root/alsa-arm-install/include/alsa/ump.h
 CMakeFiles/asr.dir/main.c.o: /root/alsa-arm-install/include/alsa/ump_msg.h
 CMakeFiles/asr.dir/main.c.o: /root/alsa-arm-install/include/alsa/version.h
+CMakeFiles/asr.dir/main.c.o: /root/model/include/sherpa-onnx/c-api/c-api.h
 CMakeFiles/asr.dir/main.c.o: ../alsa.h
 CMakeFiles/asr.dir/main.c.o: ../main.c
 CMakeFiles/asr.dir/main.c.o: ../sherpa.h
