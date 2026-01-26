@@ -152,25 +152,15 @@ alsa/asoundlib.h
 
 /root/alsa-arm-install/include/alsa/version.h
 
-/root/musicplayer/asr/alsa.h
-alsa/asoundlib.h
--
-
-/root/musicplayer/asr/main.c
+/root/musicplayer/asr/alsa.c
 alsa.h
 /root/musicplayer/asr/alsa.h
-alsa/asoundlib.h
-/root/musicplayer/asr/alsa/asoundlib.h
-sherpa.h
-/root/musicplayer/asr/sherpa.h
-asm-generic/errno-base.h
--
-stdint.h
+alloca.h
 -
 stdio.h
 -
-stdlib.h
--
 
-/root/musicplayer/asr/sherpa.h
+/root/musicplayer/asr/alsa.h
+alsa/asoundlib.h
+-
 
