@@ -10,7 +10,7 @@ const SherpaOnnxOnlineRecognizer *asr_recognizer = NULL;
 
 // extern int asr_fd;
 
-int init_sherpa_asr()
+int InitShepaAsr()
 {
 	SherpaOnnxOnlineRecognizerConfig config;
 
@@ -21,10 +21,10 @@ int init_sherpa_asr()
 	config.feat_config.feature_dim = 80;      //梅尔频谱特征的维度
 	
 	//模型配置
-	config.model_config.transducer.encoder = "/home/sherpa/sherpa-onnx-streaming-zipformer-small-bilingual-zh-en-2023-02-16/encoder-epoch-99-avg-1.onnx";
-	config.model_config.transducer.decoder = "/home/sherpa/sherpa-onnx-streaming-zipformer-small-bilingual-zh-en-2023-02-16/decoder-epoch-99-avg-1.onnx";
-	config.model_config.transducer.joiner = "/home/sherpa/sherpa-onnx-streaming-zipformer-small-bilingual-zh-en-2023-02-16/joiner-epoch-99-avg-1.onnx";
-	config.model_config.tokens = "/home/sherpa/sherpa-onnx-streaming-zipformer-small-bilingual-zh-en-2023-02-16/tokens.txt";
+	config.model_config.transducer.encoder = "/root/model/sherpa-onnx-streaming-zipformer-small-bilingual-zh-en-2023-02-16/encoder-epoch-99-avg-1.onnx";
+	config.model_config.transducer.decoder = "/root/model/sherpa-onnx-streaming-zipformer-small-bilingual-zh-en-2023-02-16/decoder-epoch-99-avg-1.onnx";
+	config.model_config.transducer.joiner = "/root/model/sherpa-onnx-streaming-zipformer-small-bilingual-zh-en-2023-02-16/joiner-epoch-99-avg-1.onnx";
+	config.model_config.tokens = "/root/model/sherpa-onnx-streaming-zipformer-small-bilingual-zh-en-2023-02-16/tokens.txt";
 	config.model_config.num_threads = 4;       //四个线程
 	config.model_config.provider = "cpu";
 	config.model_config.debug = 0;
@@ -59,8 +59,9 @@ int init_sherpa_asr()
   return 0;
 }
 
-int sherap_asr(float *float_buffer, int resample_frams)
+int SherapAsr(float *float_buffer, int resample_frams)
 {
+	// printf("进入语音识别\n");
 	int ret = 0;
 
 	//把数据提交到音频流
@@ -90,9 +91,8 @@ int sherap_asr(float *float_buffer, int resample_frams)
 			// 	perror("write fifo");
 			// }
 
-			//清空音频流数据
+			// //清空音频流数据
 			SherpaOnnxOnlineStreamReset(asr_recognizer, asr_stream);
-
 			ret = 1;
 		}
 	}

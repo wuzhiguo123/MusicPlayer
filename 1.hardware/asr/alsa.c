@@ -2,10 +2,10 @@
 #include <alloca.h>
 #include <stdio.h>
 snd_pcm_t *pcmp;
-snd_pcm_uframes_t frams_per_buffer = 1024;
+snd_pcm_uframes_t frames_per_buffer = 1024;
 unsigned int sample_rate = RATE;
 int InitAlsa(){
-    int ret;
+   int ret;
 
 	// 1.打开PCM设备
 	ret = snd_pcm_open(&pcmp, RECORD_DEVICE, SND_PCM_STREAM_CAPTURE, 0);
@@ -38,6 +38,8 @@ int InitAlsa(){
 	// 6.设置采样频率：44100Hz   44098  44106
 	unsigned int actual_rate = sample_rate; 
 	snd_pcm_hw_params_set_rate_near(pcmp, params, &actual_rate, 0);
+	printf("实际采样频率 %u\n", actual_rate);
+
 	if (actual_rate != RATE)
 	{
 		printf("实际采样频率 %u\n", actual_rate);
@@ -45,13 +47,43 @@ int InitAlsa(){
 	}
 
 	// 7.设置缓冲区的周期大小：1024帧
-	snd_pcm_hw_params_set_period_size_near(pcmp, params, &frams_per_buffer, 0);
+	snd_pcm_hw_params_set_period_size_near(pcmp, params, &frames_per_buffer, 0);
 
 	// 8.应用参数
 	snd_pcm_hw_params(pcmp, params);
+
+	if (ret < 0) {
+    fprintf(stderr, "无法设置硬件参数: %s\n", snd_strerror(ret));
+    return -1;
+}
+
 
 	// 9.准备设备，随时开始工作
 	snd_pcm_prepare(pcmp);
 
 	return 0;
+}
+
+void ResampleLinear(int16_t *input, int in_len, 
+						int16_t *output, int out_len)
+{
+	if (0 == in_len || 0 == out_len)
+		return;
+
+	if (1 == in_len || 1 == out_len)
+		output[0] = input[0];
+
+	double ratio = (double)(in_len - 1) / (out_len - 1);
+
+	for (int i = 0; i < out_len; i++)
+	{
+		double pos = i * ratio;  //计算输出下标在输入里面的位置
+		size_t idx = (size_t)pos;   //整数部分
+		double deci = pos - idx;    //小数部分
+		
+		if (idx >= in_len - 1)
+			output[i] = input[in_len - 1];
+		else
+			output[i] = (int16_t)(input[idx] * (1.0 - deci) + input[idx + 1] * deci + 0.5);
+	}
 }

@@ -1,7 +1,9 @@
 #ifndef _ALSA_H
 #define _ALSA_H
+
 #include <alsa/asoundlib.h>
-#define RECORD_DEVICE    "hw:2,0"
+
+#define RECORD_DEVICE    "plughw:0,0"
 #define RATE             44100
 
 int InitAlsa();
