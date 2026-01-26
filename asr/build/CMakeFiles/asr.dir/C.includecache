@@ -164,3 +164,21 @@ stdio.h
 alsa/asoundlib.h
 -
 
+/root/musicplayer/asr/main.c
+alsa.h
+/root/musicplayer/asr/alsa.h
+alsa/asoundlib.h
+/root/musicplayer/asr/alsa/asoundlib.h
+sherpa.h
+/root/musicplayer/asr/sherpa.h
+asm-generic/errno-base.h
+-
+stdint.h
+-
+stdio.h
+-
+stdlib.h
+-
+
+/root/musicplayer/asr/sherpa.h
+
