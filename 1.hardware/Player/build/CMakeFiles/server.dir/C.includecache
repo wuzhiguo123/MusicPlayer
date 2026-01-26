@@ -38,7 +38,7 @@ stddef.h
 
 /root/json-arm-install/include/json-c/printbuf.h
 
-/root/musicplayer/net/server.c
+/root/musicplayer/1.hardware/Player/net/server.c
 arpa/inet.h
 -
 json-c/json_object.h

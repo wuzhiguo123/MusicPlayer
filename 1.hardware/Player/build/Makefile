@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/musicplayer
+CMAKE_SOURCE_DIR = /root/musicplayer/1.hardware/Player
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/musicplayer/build
+CMAKE_BINARY_DIR = /root/musicplayer/1.hardware/Player/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/musicplayer/build/CMakeFiles /root/musicplayer/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/musicplayer/1.hardware/Player/build/CMakeFiles /root/musicplayer/1.hardware/Player/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/musicplayer/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/musicplayer/1.hardware/Player/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -135,33 +135,6 @@ MusicPlayer: cmake_check_build_system
 MusicPlayer/fast:
 	$(MAKE) -f CMakeFiles/MusicPlayer.dir/build.make CMakeFiles/MusicPlayer.dir/build
 .PHONY : MusicPlayer/fast
-
-asr/alsa.o: asr/alsa.c.o
-
-.PHONY : asr/alsa.o
-
-# target to build an object file
-asr/alsa.c.o:
-	$(MAKE) -f CMakeFiles/MusicPlayer.dir/build.make CMakeFiles/MusicPlayer.dir/asr/alsa.c.o
-.PHONY : asr/alsa.c.o
-
-asr/alsa.i: asr/alsa.c.i
-
-.PHONY : asr/alsa.i
-
-# target to preprocess a source file
-asr/alsa.c.i:
-	$(MAKE) -f CMakeFiles/MusicPlayer.dir/build.make CMakeFiles/MusicPlayer.dir/asr/alsa.c.i
-.PHONY : asr/alsa.c.i
-
-asr/alsa.s: asr/alsa.c.s
-
-.PHONY : asr/alsa.s
-
-# target to generate assembly for a file
-asr/alsa.c.s:
-	$(MAKE) -f CMakeFiles/MusicPlayer.dir/build.make CMakeFiles/MusicPlayer.dir/asr/alsa.c.s
-.PHONY : asr/alsa.c.s
 
 device/device.o: device/device.c.o
 
@@ -362,9 +335,6 @@ help:
 	@echo "... server"
 	@echo "... edit_cache"
 	@echo "... MusicPlayer"
-	@echo "... asr/alsa.o"
-	@echo "... asr/alsa.i"
-	@echo "... asr/alsa.s"
 	@echo "... device/device.o"
 	@echo "... device/device.i"
 	@echo "... device/device.s"

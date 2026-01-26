@@ -48,6 +48,6 @@ void UpVolume();
 void DownVolume();
 void CirclePlay();
 void SequencePlay();
-
+void ReadAsrFifo();
 
 #endif

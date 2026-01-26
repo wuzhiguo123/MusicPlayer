@@ -53,7 +53,6 @@ set(MUSIC_SOURCES   musiclink/link.c)
 set(SELECT_SOURCES  select/select.c)
 set(NET_SOURCES     net/net.c)
 set(DEVICE_SOURCES  device/device.c)
-set(ALSA_SOURCES     asr/alsa.c)
 set(MAIN_SOURCES    main.c)
 
 set(ALL_SOURCES
@@ -78,7 +77,6 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     select
     net
     device
-    asr
     ${JSON-C_INCLUDE_DIRS}
     ${ALSA_INCLUDE_DIRS}
 )

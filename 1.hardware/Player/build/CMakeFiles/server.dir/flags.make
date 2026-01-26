@@ -6,5 +6,5 @@ C_FLAGS =   -Wall -Wextra -std=gnu11
 
 C_DEFINES = 
 
-C_INCLUDES = -I/root/musicplayer -I/root/musicplayer/net -I/root/json-arm-install/include -I/root/alsa-arm-install/include 
+C_INCLUDES = -I/root/musicplayer/1.hardware/Player -I/root/musicplayer/1.hardware/Player/net -I/root/json-arm-install/include -I/root/alsa-arm-install/include 
 

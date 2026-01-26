@@ -83,13 +83,13 @@ int main()
 	printf("关键词加载成功\n");
 
 	//打开管道
-	asr_fd = open("/home/fifo/asr_fifo", O_WRONLY);
-	// if (-1 == asr_fd)
-	// {
-	// 	fprintf(stderr, "open fifo error\n");
-	// 	clean_up();
-	// 	return -1;
-	// }
+	asr_fd = open("/root/fifo/asr_fifo", O_WRONLY);
+	if (-1 == asr_fd)
+	{
+		fprintf(stderr, "open fifo error\n");
+		CleanUp();
+		return -1;
+	}
 
 	// printf("\n\n=====关键词识别模式=====\n");
 	// printf("请说关键词唤醒...\n");

@@ -24,6 +24,7 @@ const char* path = "/tmp";
 const int proj_id = 0x66;
 const int SEMKEY = 1000;
 extern MusicNode* music_head;
+extern int g_asrfd;
 
 //共享内存相关，用来实现进程间共享歌曲的信息
 key_t GetShmkey()
@@ -544,4 +545,12 @@ void SequencePlay()
     GetShm(&cur_info);
     cur_info.cur_mode  = 1;
     SetShm(&cur_info);
+}
+
+
+void ReadAsrFifo()
+{
+    char buffer[256] = {0};
+    read(g_asrfd, buffer, strlen(buffer));
+    printf("-------->%s\n",buffer);
 }

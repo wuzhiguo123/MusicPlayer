@@ -8,4 +8,4 @@ CMakeFiles/server.dir/net/server.c.o
  /root/json-arm-install/include/json-c/json_tokener.h
  /root/json-arm-install/include/json-c/json_types.h
  /root/json-arm-install/include/json-c/printbuf.h
- /root/musicplayer/net/server.c
+ /root/musicplayer/1.hardware/Player/net/server.c

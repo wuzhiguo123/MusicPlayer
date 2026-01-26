@@ -12,4 +12,10 @@ if [ ! -z $semid ]; then
 	ipcrm -s $semid
 fi
 
-rm -rf ./cmd_fifo
+rm -rf /root/fifo
+
+mkdir /root/fifo
+
+mkfifo /root/fifo/cmd_fifo
+mkfifo /root/fifo/asr_fifo
+

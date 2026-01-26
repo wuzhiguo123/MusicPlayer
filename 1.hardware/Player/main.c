@@ -2,12 +2,17 @@
 #include "musiclink/link.h"
 #include "player.h"
 #include "net/net.h"
+#include <fcntl.h>
 #include <signal.h>
+#include <stdio.h>
 #include <stdlib.h>
+#include <x86_64-linux-gnu/sys/select.h>
 #include "device.h"
 #include "main.h"
-#include "alsa.h"
+
 extern MusicNode* music_head;
+extern int g_maxfd;
+int g_asrfd;
 void CheckMusicList()
 {
 
@@ -21,6 +26,19 @@ void CheckMusicList()
         count++;
     }
     printf("一共%d首歌\n",count);
+
+}
+void InitAsrFifo()
+{
+    g_asrfd = open("/root/fifo/asr_fifo",O_RDONLY);
+    if(g_asrfd < 0)
+    {
+        fprintf(stderr, "Open ERROR");
+        exit(-1);
+    }
+
+    FD_SET(g_asrfd, &READSET);
+    g_maxfd = (g_maxfd < g_asrfd) ? g_asrfd : g_maxfd;
 
 }
 void ShowMenu()
@@ -48,7 +66,8 @@ int main()
     InitShm();
     InitSem();
     InitButton();
-    InitAlsa();
+    InitAsrFifo();
+
 
     SetVolume(DEFAULT_VOLUME);
 

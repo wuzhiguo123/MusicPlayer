@@ -38,7 +38,7 @@ int InitAlsa(){
 	// 6.设置采样频率：44100Hz   44098  44106
 	unsigned int actual_rate = sample_rate; 
 	snd_pcm_hw_params_set_rate_near(pcmp, params, &actual_rate, 0);
-	printf("实际采样频率 %u\n", actual_rate);
+
 
 	if (actual_rate != RATE)
 	{

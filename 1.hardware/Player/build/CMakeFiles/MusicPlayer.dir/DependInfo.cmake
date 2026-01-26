@@ -4,13 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/root/musicplayer/asr/alsa.c" "/root/musicplayer/build/CMakeFiles/MusicPlayer.dir/asr/alsa.c.o"
-  "/root/musicplayer/device/device.c" "/root/musicplayer/build/CMakeFiles/MusicPlayer.dir/device/device.c.o"
-  "/root/musicplayer/main.c" "/root/musicplayer/build/CMakeFiles/MusicPlayer.dir/main.c.o"
-  "/root/musicplayer/musiclink/link.c" "/root/musicplayer/build/CMakeFiles/MusicPlayer.dir/musiclink/link.c.o"
-  "/root/musicplayer/net/net.c" "/root/musicplayer/build/CMakeFiles/MusicPlayer.dir/net/net.c.o"
-  "/root/musicplayer/player/player.c" "/root/musicplayer/build/CMakeFiles/MusicPlayer.dir/player/player.c.o"
-  "/root/musicplayer/select/select.c" "/root/musicplayer/build/CMakeFiles/MusicPlayer.dir/select/select.c.o"
+  "/root/musicplayer/1.hardware/Player/device/device.c" "/root/musicplayer/1.hardware/Player/build/CMakeFiles/MusicPlayer.dir/device/device.c.o"
+  "/root/musicplayer/1.hardware/Player/main.c" "/root/musicplayer/1.hardware/Player/build/CMakeFiles/MusicPlayer.dir/main.c.o"
+  "/root/musicplayer/1.hardware/Player/musiclink/link.c" "/root/musicplayer/1.hardware/Player/build/CMakeFiles/MusicPlayer.dir/musiclink/link.c.o"
+  "/root/musicplayer/1.hardware/Player/net/net.c" "/root/musicplayer/1.hardware/Player/build/CMakeFiles/MusicPlayer.dir/net/net.c.o"
+  "/root/musicplayer/1.hardware/Player/player/player.c" "/root/musicplayer/1.hardware/Player/build/CMakeFiles/MusicPlayer.dir/player/player.c.o"
+  "/root/musicplayer/1.hardware/Player/select/select.c" "/root/musicplayer/1.hardware/Player/build/CMakeFiles/MusicPlayer.dir/select/select.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -27,7 +26,6 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../select"
   "../net"
   "../device"
-  "../asr"
   "/root/json-arm-install/include"
   "/root/alsa-arm-install/include"
   )

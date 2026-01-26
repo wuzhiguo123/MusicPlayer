@@ -8,6 +8,7 @@ const SherpaOnnxOnlineStream   *kws_stream     = NULL;
 extern int target_rate;
 int InitSherpaKws()
 {
+    //配置config
     SherpaOnnxKeywordSpotterConfig config;
 
   	memset(&config, 0, sizeof(config));
@@ -53,40 +54,40 @@ int SherpaKws(float *float_buffer, int resample_frams)
 	while (SherpaOnnxIsKeywordStreamReady(kws_recognizer, kws_stream)) 
 	{
     	SherpaOnnxDecodeKeywordStream(kws_recognizer, kws_stream);
+    }
+    const SherpaOnnxKeywordResult *r;
+    r = SherpaOnnxGetKeywordResult(kws_recognizer, kws_stream);
+    if (r && r->keyword && strlen(r->keyword) > 0)
+    {
+        printf("---> %s\n", r->keyword);
 
-    	const SherpaOnnxKeywordResult *r;
-		r = SherpaOnnxGetKeywordResult(kws_recognizer, kws_stream);
-		if (r && r->keyword && strlen(r->keyword) > 0)
-		{
-			printf("---> %s\n", r->keyword);
+        // if (device_mode == ONLINE_MODE && 
+        // 	!strcmp(r->keyword, "你好小胖"))
+        // {
+        // 	if (write(asr_fd, r->keyword, strlen(r->keyword)) == -1)
+        // 	{
+        // 		perror("write fifo");
+        // 	}
 
-			// if (device_mode == ONLINE_MODE && 
-			// 	!strcmp(r->keyword, "你好小胖"))
-			// {
-			// 	if (write(asr_fd, r->keyword, strlen(r->keyword)) == -1)
-			// 	{
-			// 		perror("write fifo");
-			// 	}
+        // 	ret = 1;
+        // }
+        // else if (device_mode == OFFLINE_MODE && 
+        // 		 strcmp(r->keyword, "你好小胖")) 
+        // {  //离线模式，不需要 你好小胖 来唤醒
+        // 	if (write(asr_fd, r->keyword, strlen(r->keyword)) == -1)
+        // 	{
+        // 		perror("write fifo");
+        // 	}
 
-			// 	ret = 1;
-			// }
-			// else if (device_mode == OFFLINE_MODE && 
-			// 		 strcmp(r->keyword, "你好小胖")) 
-			// {  //离线模式，不需要 你好小胖 来唤醒
-			// 	if (write(asr_fd, r->keyword, strlen(r->keyword)) == -1)
-			// 	{
-			// 		perror("write fifo");
-			// 	}
+        // 	ret = 1;
+        // }
+        ret = 1;
 
-			// 	ret = 1;
-			// }
-            ret = 1;
+        SherpaOnnxResetKeywordStream(kws_recognizer, kws_stream);
+    }
+    SherpaOnnxDestroyKeywordResult(r);
 
-			SherpaOnnxResetKeywordStream(kws_recognizer, kws_stream);
-		}
-		SherpaOnnxDestroyKeywordResult(r);
-
-	}
+	
 
 	return ret;
 }

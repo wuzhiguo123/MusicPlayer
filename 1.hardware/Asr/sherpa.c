@@ -7,6 +7,7 @@
 unsigned int target_rate = 16000;
 const SherpaOnnxOnlineStream *asr_stream = NULL;
 const SherpaOnnxOnlineRecognizer *asr_recognizer = NULL;
+extern int asr_fd;
 
 // extern int asr_fd;
 
@@ -86,10 +87,10 @@ int SherpaAsr(float *float_buffer, int resample_frams)
 			printf("---> %s\n", r->text);
 
 			//把数据写入管道
-			// if (write(asr_fd, r->text, strlen(r->text)) == -1)
-			// {
-			// 	perror("write fifo");
-			// }
+			if (write(asr_fd, r->text, strlen(r->text)) == -1)
+			{
+				perror("write fifo");
+			}
 
 			// //清空音频流数据
 			SherpaOnnxOnlineStreamReset(asr_recognizer, asr_stream);

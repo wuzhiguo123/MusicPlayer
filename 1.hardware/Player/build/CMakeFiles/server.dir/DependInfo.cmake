@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/root/musicplayer/net/server.c" "/root/musicplayer/build/CMakeFiles/server.dir/net/server.c.o"
+  "/root/musicplayer/1.hardware/Player/net/server.c" "/root/musicplayer/1.hardware/Player/build/CMakeFiles/server.dir/net/server.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

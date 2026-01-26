@@ -8,6 +8,7 @@
 #include <sys/select.h>
 #include <unistd.h>
 #include <pthread.h>
+#include <x86_64-linux-gnu/sys/select.h>
 #include "main.h"
 
 extern fd_set READSET;
@@ -15,6 +16,7 @@ extern pthread_t tid;
 extern int g_maxfd;
 extern int g_sockfd;
 extern int g_button_fd;
+extern int g_asrfd;
 void InitSelect()
 {
     FD_ZERO(&READSET);
@@ -91,9 +93,14 @@ void MySelect()
             ReadSocket();
         }
 
-        else if(FD_ISSET(g_button_fd,&TMPSET))
+        else if(FD_ISSET(g_button_fd,&TMPSET))//按键
         {
             ReadButton();
+        }
+
+        else if(FD_ISSET(g_asrfd, &TMPSET))//语音
+        {
+            ReadAsrFifo();
         }
     }
 
