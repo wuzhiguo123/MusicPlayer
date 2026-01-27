@@ -156,6 +156,14 @@ alsa/asoundlib.h
 stdint.h
 -
 
+/root/musicplayer/1.hardware/Asr/alsa.c
+alsa.h
+/root/musicplayer/1.hardware/Asr/alsa.h
+alloca.h
+-
+stdio.h
+-
+
 /root/musicplayer/1.hardware/Asr/alsa.h
 alsa/asoundlib.h
 -
@@ -177,16 +185,6 @@ kws.h
 /root/musicplayer/1.hardware/Asr/kws.h
 sherpa-onnx/c-api/c-api.h
 /root/musicplayer/1.hardware/Asr/sherpa-onnx/c-api/c-api.h
-
-/root/musicplayer/1.hardware/Asr/sherpa.c
-sherpa-onnx/c-api/c-api.h
-/root/musicplayer/1.hardware/Asr/sherpa-onnx/c-api/c-api.h
-stdio.h
--
-string.h
--
-unistd.h
--
 
 /root/musicplayer/1.hardware/Asr/sherpa.h
 
