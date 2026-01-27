@@ -29,6 +29,8 @@ extern MusicNode* music_head;
 extern int g_asrfd;
 extern fd_set READSET;
 extern int g_maxfd;
+char buffer[256] = {0};
+
 
 //共享内存相关，用来实现进程间共享歌曲的信息
 key_t GetShmkey()
@@ -271,7 +273,7 @@ void ChildProcess(char* music_name)
             arg[2] = "-slave";
             arg[3] = "-quiet";
             arg[4] = "-input";
-            arg[5] = "file=./cmd_fifo";
+            arg[5] = "file=/root/fifo/cmd_fifo";
             arg[6] = NULL;
             if(execv("/usr/bin/mplayer",arg) == -1)
             {
@@ -354,7 +356,7 @@ void StartPlay()
 
 void WriteFifo(const char* cmd)
 {
-    int fd = open("./cmd_fifo",O_WRONLY);
+    int fd = open("/root/fifo/cmd_fifo",O_WRONLY);
     if(fd == -1)
     {
         perror("[Open Fifo Error]");
@@ -599,7 +601,6 @@ void ProcessAsrSignal(char* signal)
 
 void ReadAsrFifo()
 {
-    char buffer[256] = {0};
     int ret = read(g_asrfd, buffer, sizeof(buffer));
     if(ret == -1)
     {
