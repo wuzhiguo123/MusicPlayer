@@ -341,6 +341,11 @@ void StartPlay()
 {
 
     printf("STARTPLAY!!!!!!!!!!!!!!!!!!\n,g_start_pay = %d",g_start_flag);
+    if(g_suspend_flag == 1)
+    {
+        ContinuePlay();
+        return;
+    }
     if(g_start_flag == 1)
         return;
     char music_name[128] = {0};
@@ -582,11 +587,11 @@ void ProcessAsrSignal(char* signal)
     {
         PrevPlay();
     }
-    else if(strstr(signal,"音") && (strstr(signal,"大") || strstr(signal,"调小")))
+    else if(strstr(signal,"音") && strstr(signal,"调大"))
     {
         UpVolume();
     }
-    else if(strstr(signal,"音") && (strstr(signal,"小") || strstr(signal,"调大")))
+    else if(strstr(signal,"音") &&  strstr(signal,"调小"))
     {
         DownVolume();
     }
@@ -597,6 +602,11 @@ void ProcessAsrSignal(char* signal)
     else if (strstr(signal,"顺序")) {
         SequencePlay();
     }
+    else if(strstr(signal, "触发关键词"))
+    {
+        SuspendPlay();
+    }
+    memset(buffer, 0, strlen(buffer));
 }
 
 void ReadAsrFifo()

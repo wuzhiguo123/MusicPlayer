@@ -1,10 +1,11 @@
 #include "sherpa-onnx/c-api/c-api.h"
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 
 const SherpaOnnxKeywordSpotter *kws_recognizer = NULL;
 const SherpaOnnxOnlineStream   *kws_stream     = NULL;
-
+extern int asr_fd;
 extern int target_rate;
 int InitSherpaKws()
 {
@@ -60,6 +61,13 @@ int SherpaKws(float *float_buffer, int resample_frams)
     if (r && r->keyword && strlen(r->keyword) > 0)
     {
         printf("---> %s\n", r->keyword);
+        char buffer[16] = "触发关键词";
+        if(write(asr_fd,buffer,strlen(buffer)) < 0)
+        {
+            fprintf(stderr,"WRITE ASR_FD ERROR\n");
+        }
+
+        
 
         // if (device_mode == ONLINE_MODE && 
         // 	!strcmp(r->keyword, "你好小胖"))
