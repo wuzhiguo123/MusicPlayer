@@ -114,6 +114,7 @@ CMakeFiles/MusicPlayer.dir/player/player.c.o
  ../device/device.h
  ../musiclink/link.h
  ../net/net.h
+ ../select/select.h
  /root/alsa-arm-install/include/alsa/asoundef.h
  /root/alsa-arm-install/include/alsa/asoundlib.h
  /root/alsa-arm-install/include/alsa/conf.h

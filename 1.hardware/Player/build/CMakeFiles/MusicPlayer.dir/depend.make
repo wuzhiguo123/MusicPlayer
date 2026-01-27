@@ -113,6 +113,7 @@ CMakeFiles/MusicPlayer.dir/net/net.c.o: ../net/net.h
 CMakeFiles/MusicPlayer.dir/player/player.c.o: ../device/device.h
 CMakeFiles/MusicPlayer.dir/player/player.c.o: ../musiclink/link.h
 CMakeFiles/MusicPlayer.dir/player/player.c.o: ../net/net.h
+CMakeFiles/MusicPlayer.dir/player/player.c.o: ../select/select.h
 CMakeFiles/MusicPlayer.dir/player/player.c.o: /root/alsa-arm-install/include/alsa/asoundef.h
 CMakeFiles/MusicPlayer.dir/player/player.c.o: /root/alsa-arm-install/include/alsa/asoundlib.h
 CMakeFiles/MusicPlayer.dir/player/player.c.o: /root/alsa-arm-install/include/alsa/conf.h

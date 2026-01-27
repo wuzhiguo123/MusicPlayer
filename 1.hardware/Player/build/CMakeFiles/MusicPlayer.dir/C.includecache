@@ -16,6 +16,10 @@ stdio.h
 
 ../net/net.h
 
+../select/select.h
+sys/select.h
+-
+
 /root/alsa-arm-install/include/alsa/asoundef.h
 alsa/asoundlib.h
 -
@@ -191,12 +195,16 @@ stdlib.h
 -
 time.h
 -
+x86_64-linux-gnu/sys/select.h
+-
 link.h
 /root/musicplayer/1.hardware/Player/player/link.h
 net.h
 /root/musicplayer/1.hardware/Player/player/net.h
 device.h
 /root/musicplayer/1.hardware/Player/player/device.h
+select.h
+/root/musicplayer/1.hardware/Player/player/select.h
 
 /root/musicplayer/1.hardware/Player/player/player.h
 sched.h
