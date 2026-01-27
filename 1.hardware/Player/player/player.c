@@ -12,9 +12,11 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <time.h>
+#include <x86_64-linux-gnu/sys/select.h>
 #include "link.h"
 #include "net.h"
 #include "device.h"
+#include "select.h"
 int g_shm_id = 0;
 int g_start_flag = 0;
 int g_suspend_flag = 0;
@@ -25,6 +27,8 @@ const int proj_id = 0x66;
 const int SEMKEY = 1000;
 extern MusicNode* music_head;
 extern int g_asrfd;
+extern fd_set READSET;
+extern int g_maxfd;
 
 //共享内存相关，用来实现进程间共享歌曲的信息
 key_t GetShmkey()
@@ -548,9 +552,68 @@ void SequencePlay()
 }
 
 
+void ProcessAsrSignal(char* signal)
+{
+    if(signal == NULL || strlen(signal) == 0)
+        return;
+    if(strstr(signal, "听歌") || strstr(signal,"开始"))
+    {
+        StartPlay();
+    }
+    else if(strstr(signal, "停止") || strstr(signal,"不想听") || strstr(signal,"退出") || strstr(signal,"关闭"))
+    {
+        StopPlay();
+    }
+    else if (strstr(signal, "暂停")|| strstr(signal,"休息") || strstr(signal,"电话")||strstr(signal,"急事")) 
+    {
+        SuspendPlay();
+    }
+    else if(strstr(signal,"继续") || strstr(signal,"恢复"))
+    {
+        ContinuePlay();
+    }
+    else if((strstr(signal,"下") || strstr(signal,"换"))&& strstr(signal, "首"))
+    {
+        NextPlay();
+    }
+    else if((strstr(signal,"上") || strstr(signal,"刚")) && strstr(signal,"首"))
+    {
+        PrevPlay();
+    }
+    else if(strstr(signal,"音") && (strstr(signal,"大") || strstr(signal,"调小")))
+    {
+        UpVolume();
+    }
+    else if(strstr(signal,"音") && (strstr(signal,"小") || strstr(signal,"调大")))
+    {
+        DownVolume();
+    }
+    else if(strstr(signal,"循环"))
+    {
+        CirclePlay();
+    }
+    else if (strstr(signal,"顺序")) {
+        SequencePlay();
+    }
+}
+
 void ReadAsrFifo()
 {
     char buffer[256] = {0};
-    read(g_asrfd, buffer, strlen(buffer));
+    int ret = read(g_asrfd, buffer, sizeof(buffer));
+    if(ret == -1)
+    {
+        fprintf(stderr,"READ ERROR");
+        return;
+    }
+    else if(ret == 0)
+    {
+        close(g_asrfd);
+        FD_CLR(g_asrfd, &READSET);
+        g_maxfd = (g_maxfd == g_asrfd ? g_maxfd-1 : g_maxfd);
+        printf("语言模型已关闭，将关闭语音控制功能\n");
+        return;
+    }
     printf("-------->%s\n",buffer);
+    ProcessAsrSignal(buffer);
 }
