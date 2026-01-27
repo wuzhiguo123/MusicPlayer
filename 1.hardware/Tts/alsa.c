@@ -52,12 +52,6 @@ int InitAlsa(){
 	// 8.应用参数
 	snd_pcm_hw_params(pcmp, params);
 
-	if (ret < 0) {
-    fprintf(stderr, "无法设置硬件参数: %s\n", snd_strerror(ret));
-    return -1;
-}
-
-
 	// 9.准备设备，随时开始工作
 	snd_pcm_prepare(pcmp);
 
@@ -74,7 +68,7 @@ int32_t PlayCallBack(const float *samples, int32_t n)//samples:数据;n:数据�
             tmp = -1.0;
         if(tmp > 1.0)
             tmp = 1.0;
-        play_buffer[i] = (int16_t)tmp*32767;
+        play_buffer[i] = (int16_t)(tmp*32767);
     }
 
     int ret = snd_pcm_writei(pcmp, play_buffer, n);

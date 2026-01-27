@@ -13,6 +13,7 @@
 extern MusicNode* music_head;
 extern int g_maxfd;
 int g_asrfd;
+int g_ttsfd;
 void CheckMusicList()
 {
 
@@ -28,10 +29,11 @@ void CheckMusicList()
     printf("一共%d首歌\n",count);
 
 }
-void InitAsrFifo()
+void InitFifo()
 {
     g_asrfd = open("/root/fifo/asr_fifo",O_RDONLY);
-    if(g_asrfd < 0)
+    g_ttsfd = open("/root/fifo/asr_fifo",O_WRONLY);
+    if(g_asrfd < 0 || g_ttsfd < 0)
     {
         fprintf(stderr, "Open ERROR");
         exit(-1);
@@ -66,7 +68,7 @@ int main()
     InitShm();
     InitSem();
     InitButton();
-    InitAsrFifo();
+    InitFifo();
 
 
     SetVolume(DEFAULT_VOLUME);

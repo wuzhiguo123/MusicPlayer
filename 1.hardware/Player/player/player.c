@@ -29,6 +29,7 @@ extern MusicNode* music_head;
 extern int g_asrfd;
 extern fd_set READSET;
 extern int g_maxfd;
+extern int g_ttsfd;
 char buffer[256] = {0};
 
 
@@ -376,6 +377,8 @@ void WriteFifo(const char* cmd)
 
 void StopPlay()
 {
+    if(g_start_flag == 0)
+        return;
     Shm cur_info;
     GetShm(&cur_info);
     //通知子进程退出播放
@@ -558,12 +561,22 @@ void SequencePlay()
     SetShm(&cur_info);
 }
 
+void ReplyKeyWords()
+{
+    char buffer[128] = "老大我在";
+    write(g_ttsfd,buffer , strlen(buffer));
+}
 
 void ProcessAsrSignal(char* signal)
 {
     if(signal == NULL || strlen(signal) == 0)
         return;
-    if(strstr(signal, "听歌") || strstr(signal,"开始"))
+    if(strstr(signal, "触发关键词"))
+    {
+        SuspendPlay();
+        ReplyKeyWords();
+    }
+    else if(strstr(signal, "听歌") || strstr(signal,"开始"))
     {
         StartPlay();
     }
@@ -602,9 +615,26 @@ void ProcessAsrSignal(char* signal)
     else if (strstr(signal,"顺序")) {
         SequencePlay();
     }
-    else if(strstr(signal, "触发关键词"))
+    else if(strstr(signal,"周杰伦"))
     {
-        SuspendPlay();
+        StopPlay();
+        ClearMusicList();
+        GetMusicName("周杰伦");
+        StartPlay();
+    }
+    else if(strstr(signal,"陈奕迅"))
+    {
+        StopPlay();
+        ClearMusicList();
+        GetMusicName("陈奕迅");
+        StartPlay();
+    }
+    else if(strstr(signal,"许嵩"))
+    {
+        StopPlay();
+        ClearMusicList();
+        GetMusicName("许嵩");
+        StartPlay();
     }
     memset(buffer, 0, strlen(buffer));
 }

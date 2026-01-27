@@ -16,6 +16,12 @@ stdio.h
 
 ../net/net.h
 
+../player/player.h
+sched.h
+-
+sys/shm.h
+-
+
 ../select/select.h
 sys/select.h
 -
@@ -166,6 +172,46 @@ alsa/asoundlib.h
 
 /root/alsa-arm-install/include/alsa/version.h
 
+/root/musicplayer/1.hardware/Player/main.c
+select/select.h
+/root/musicplayer/1.hardware/Player/select/select.h
+musiclink/link.h
+/root/musicplayer/1.hardware/Player/musiclink/link.h
+player.h
+/root/musicplayer/1.hardware/Player/player.h
+net/net.h
+/root/musicplayer/1.hardware/Player/net/net.h
+fcntl.h
+-
+signal.h
+-
+stdio.h
+-
+stdlib.h
+-
+x86_64-linux-gnu/sys/select.h
+-
+device.h
+/root/musicplayer/1.hardware/Player/device.h
+main.h
+/root/musicplayer/1.hardware/Player/main.h
+
+/root/musicplayer/1.hardware/Player/main.h
+link.h
+/root/musicplayer/1.hardware/Player/link.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+
+/root/musicplayer/1.hardware/Player/musiclink/link.h
+stdio.h
+-
+
+/root/musicplayer/1.hardware/Player/net/net.h
+
 /root/musicplayer/1.hardware/Player/player/player.c
 player.h
 /root/musicplayer/1.hardware/Player/player/player.h
@@ -210,5 +256,9 @@ select.h
 sched.h
 -
 sys/shm.h
+-
+
+/root/musicplayer/1.hardware/Player/select/select.h
+sys/select.h
 -
 
