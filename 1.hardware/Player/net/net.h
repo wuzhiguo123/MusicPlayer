@@ -7,6 +7,7 @@ int InitSocket();
 int RecSocketData(char* );
 int GetMusicName(const char* singer);
 void ReadSocket();
+void UploadMusic();
 
 
 #endif

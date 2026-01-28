@@ -27,6 +27,7 @@ pthread_t tid;
 extern int g_start_flag;
 extern int g_suspend_flag;
 extern int g_device_mode;
+extern MusicNode* music_head;
 
 void SendMusicInfo(struct json_object *obj) {
   char buffer[1024] = {0};
@@ -169,6 +170,7 @@ int GetMusicName(const char *singer) {
 
   LinkMusicList(music_name);
   json_object_put(obj);
+  UploadMusic();
   return 0;
 }
 
@@ -330,6 +332,26 @@ void SocketSeqPlay()
     json_object_put(obj);
 }
 
+void UploadMusic()
+{
+    struct json_object* obj = json_object_new_object();
+    json_object_object_add(obj, "cmd", json_object_new_string("upload_music"));
+
+    struct json_object* array = json_object_new_array();
+    MusicNode* p = music_head;
+    printf("UploadMusic():music_head:%p\n",music_head);
+    while(p)
+    {
+        json_object_array_add(array,json_object_new_string(p->music_name ));
+        printf("UPLOAD:musicname:%s\n",p->music_name);
+        p = p->next;
+    }
+    json_object_object_add(obj, "music", array);
+    SendMusicInfo(obj);
+    json_object_put(obj);
+    // json_object_put(array);//已经把array交给obj了，就只用释放obj
+}
+
 void ReadSocket() 
 {
     char buffer[1024] = {0};
@@ -376,4 +398,10 @@ void ReadSocket()
     {
         SocketSeqPlay();
     }
+    else if(!strcmp(cmd,"app_get_music"))
+    {
+        UploadMusic();
+    }
 }
+
+

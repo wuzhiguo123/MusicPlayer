@@ -7,6 +7,7 @@
 #include <stdlib.h>
 snd_pcm_t *pcmp;
 extern int32_t target_rate;
+extern int play_flag;
 int InitAlsa(){
    int ret;
 
@@ -60,6 +61,9 @@ int InitAlsa(){
 
 int32_t PlayCallBack(const float *samples, int32_t n)//samples:数据;n:数据帧数
 {
+	printf("playcallback\n");
+	if(!play_flag)
+		return 0;
     int16_t* play_buffer = malloc(sizeof(int16_t)*n);
     for(int i = 0; i< n;i++)
     {
@@ -82,8 +86,6 @@ int32_t PlayCallBack(const float *samples, int32_t n)//samples:数据;n:数据�
         fprintf(stderr,"写入失败\n");
         return 0;
     }
-    return 1;
-
-
-
+	free(play_buffer);
+    return play_flag;
 }

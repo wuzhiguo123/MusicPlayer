@@ -298,6 +298,9 @@ void ChildProcess(char* music_name)
 
 void ChildQuitProcess(int sig)
 {
+    FILE* test = fopen("./test.txt",O_WRONLY);
+    fprintf(test,"子进程退出\n");
+    fclose(test);
     g_start_flag = 0;//让子进程退出循环，结束子进程
 }
 
@@ -315,6 +318,7 @@ void UpdateMusic(int sig)
     ClearMusicList();
     //请求新的数据
     GetMusicName(cur_info.cur_signer);
+
     StartPlay();
 
 }
@@ -423,6 +427,7 @@ void ContinuePlay()
 
 void NextPlay()
 {
+    
     if(g_start_flag == 0)
         return;
     SemP();
@@ -464,6 +469,7 @@ void NextPlay()
     strcat(music_path,next);
     sprintf(cmd,"loadfile %s\n",music_path);
     WriteFifo(cmd);
+    g_suspend_flag = 0;
 }
 
 void PrevPlay()
@@ -504,6 +510,8 @@ void PrevPlay()
     strcat(music_path,prev);
     sprintf(cmd,"loadfile %s\n",music_path);
     WriteFifo(cmd);
+    g_suspend_flag = 0;
+
 }
  
 

@@ -32,7 +32,7 @@ void CheckMusicList()
 void InitFifo()
 {
     g_asrfd = open("/root/fifo/asr_fifo",O_RDONLY);
-    g_ttsfd = open("/root/fifo/asr_fifo",O_WRONLY);
+    g_ttsfd = open("/root/fifo/tts_fifo",O_WRONLY);
     if(g_asrfd < 0 || g_ttsfd < 0)
     {
         fprintf(stderr, "Open ERROR");
@@ -93,6 +93,7 @@ int main()
 
     CheckMusicList();
  
+    
 
     while(1)
     {}

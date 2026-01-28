@@ -1,0 +1,1 @@
+/usr/bin/aarch64-linux-gnu-gcc    CMakeFiles/qianwen.dir/qianwen.c.o  -o qianwen  -Wl,-rpath,/root/json-arm-install/lib /root/json-arm-install/lib/libjson-c.so.5.4.0 
