@@ -161,13 +161,21 @@ alsa/asoundlib.h
 /root/musicplayer/1.hardware/Tts/alsa/asoundlib.h
 
 /root/musicplayer/1.hardware/Tts/main.c
+alsa/asoundlib.h
+/root/musicplayer/1.hardware/Tts/alsa/asoundlib.h
 tts.h
 /root/musicplayer/1.hardware/Tts/tts.h
 alsa.h
 /root/musicplayer/1.hardware/Tts/alsa.h
 fcntl.h
 -
+signal.h
+-
 stdio.h
+-
+stdlib.h
+-
+string.h
 -
 unistd.h
 -
