@@ -93,10 +93,14 @@ json_object.h
 /root/json-arm-install/include/json-c/printbuf.h
 
 /root/musicplayer/1.hardware/Chatmodel/qianwen.c
+fcntl.h
+-
 json-c/json.h
 -
 stdio.h
 -
 string.h
+-
+unistd.h
 -
 
