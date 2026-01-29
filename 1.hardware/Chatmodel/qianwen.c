@@ -1,6 +1,8 @@
+#include <fcntl.h>
 #include <json-c/json.h>
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 
 void ParseJson(char* buffer,char* content)
 {
@@ -23,7 +25,7 @@ int main(int argc,char* argv[])
     }
 
     char commond[1024] = {0};
-    sprintf(commond, "/root/MusicPlayer/1.hardware/Chatmodel %s", argv[1]);
+    sprintf(commond, "/root/MusicPlayer/1.hardware/Chatmodel/qianwen.sh %s 2>/dev/null", argv[1]);
 
     FILE* fp = popen(commond, "r");
     if(fp == NULL)
@@ -38,6 +40,11 @@ int main(int argc,char* argv[])
     char content[1024] = {0};
     ParseJson(buffer,content);
 
-    printf("-->%s\n",content);
+    if(strlen(content) > 0)
+    {
+        int tts_fd = open("/root/fifo/tts_fifo", O_WRONLY);
+        write(tts_fd, content, strlen(content));
+        close(tts_fd);
+    }
     return 0;
 }

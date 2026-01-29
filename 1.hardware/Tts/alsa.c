@@ -47,7 +47,7 @@ int InitAlsa(){
 	printf("播放频率为%u\n",actual_rate);
 
 	// 7.设置缓冲区大小
-    snd_pcm_uframes_t frames_buffer = 8192;
+    snd_pcm_uframes_t frames_buffer = 16384;
 	snd_pcm_hw_params_set_buffer_size_near(pcmp, params, &frames_buffer);
 
 	// 8.应用参数
@@ -78,7 +78,13 @@ int32_t PlayCallBack(const float *samples, int32_t n)//samples:数据;n:数据�
     int ret = snd_pcm_writei(pcmp, play_buffer, n);
     if(ret == -EPIPE)
     {
-        fprintf(stderr,"缓冲区欠载\n");
+		snd_pcm_prepare(pcmp);
+		ret = snd_pcm_writei(pcmp, play_buffer, n);
+		if (ret < 0)
+		{
+			printf("缓冲区欠载，重写失败\n");
+			return 0;
+		}
     }
 
     if(ret < 0)

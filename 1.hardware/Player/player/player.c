@@ -575,6 +575,22 @@ void ReplyKeyWords()
     write(g_ttsfd,buffer , strlen(buffer));
 }
 
+void TtsStop()
+{
+    FILE* fp = popen("pgrep tts", "r");
+    if(fp == NULL)
+    {
+        fprintf(stderr,"ponen() error!\n");
+    }
+    char buff[64] = {0};
+    fgets(buff, sizeof(buff), fp);
+    pid_t tts_pid = atoi(buff);
+    if(strlen(buff))
+    {
+        kill(tts_pid, SIGUSR1);
+    }
+}
+
 void ProcessAsrSignal(char* signal)
 {
     if(signal == NULL || strlen(signal) == 0)
@@ -582,6 +598,7 @@ void ProcessAsrSignal(char* signal)
     if(strstr(signal, "触发关键词"))
     {
         SuspendPlay();
+        TtsStop();
         ReplyKeyWords();
     }
     else if(strstr(signal, "听歌") || strstr(signal,"开始"))
@@ -644,7 +661,12 @@ void ProcessAsrSignal(char* signal)
         GetMusicName("许嵩");
         StartPlay();
     }
-    memset(buffer, 0, strlen(buffer));
+    else {
+        char cmd[1024] = {0};
+        sprintf(cmd, "/root/MusicPlayer/1.hardware/Chatmodel/build/qianwen %s", signal);
+        system(cmd);
+    }
+    memset(buffer, 0, sizeof(buffer));
 }
 
 void ReadAsrFifo()

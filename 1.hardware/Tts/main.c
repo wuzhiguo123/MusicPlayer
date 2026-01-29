@@ -12,7 +12,6 @@ const SherpaOnnxOfflineTts *tts;
 int play_flag = 1;
 int tts_fd = -1;
 extern snd_pcm_t *pcmp;
-char* buffer = NULL;
 int running = 1;
 
 
@@ -25,8 +24,6 @@ void CleanUp()
         snd_pcm_close(pcmp);
     if(tts_fd > 0)
         close(tts_fd);
-    if(buffer)
-        free(buffer);
     exit(0);
 }
 
@@ -35,10 +32,14 @@ void HandleQuit()
     printf("TTS退出\n");
     CleanUp();
 }
+void HandleStop()
+{
+    play_flag = 0;
+}
 int main()
 {
     signal(SIGINT, HandleQuit);
-
+    signal(SIGUSR1, HandleStop);
     if(InitSherpaTts()== 0)
         printf("初始化TTS成功\n");
     else 
@@ -64,9 +65,9 @@ int main()
         CleanUp();
         return -1;
     }
-    buffer = malloc(sizeof(char)*128);
+    char buffer[1024] = {0};
     while (running) {
-        memset(buffer, 0, sizeof(char)*128);
+        memset(buffer, 0, sizeof(buffer));
         ssize_t r = read(tts_fd, buffer,sizeof(char)*128);
         if(r < 0)
         {

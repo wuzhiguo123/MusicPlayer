@@ -85,13 +85,13 @@ void* ReciveMusicInfo(void* arg)
             json_object_object_add(snd_obj, "cmd", json_object_new_string("reply_music_list"));
 
             struct json_object* music_array = json_object_new_array();
-            // json_object_array_add(music_array, json_object_new_string("其他/以后的以后.mp3"));
-            // json_object_array_add(music_array, json_object_new_string("其他/倾国倾城.mp3"));
-            // json_object_array_add(music_array, json_object_new_string("其他/童话.mp3"));
-            // json_object_array_add(music_array, json_object_new_string("其他/那些年.mp3"));
-            // json_object_array_add(music_array, json_object_new_string("其他/一直想着他.mp3"));
-            json_object_array_add(music_array, json_object_new_string("其他/1.mp3"));
-            json_object_array_add(music_array, json_object_new_string("其他/2.mp3"));
+            json_object_array_add(music_array, json_object_new_string("其他/以后的以后.mp3"));
+            json_object_array_add(music_array, json_object_new_string("其他/倾国倾城.mp3"));
+            json_object_array_add(music_array, json_object_new_string("其他/童话.mp3"));
+            json_object_array_add(music_array, json_object_new_string("其他/那些年.mp3"));
+            json_object_array_add(music_array, json_object_new_string("其他/一直想着他.mp3"));
+            // json_object_array_add(music_array, json_object_new_string("其他/1.mp3"));
+            // json_object_array_add(music_array, json_object_new_string("其他/2.mp3"));
             // json_object_array_add(music_array, json_object_new_string("其他/3.mp3"));
             // json_object_array_add(music_array, json_object_new_string("其他/4.mp3"));
             // json_object_array_add(music_array, json_object_new_string("其他/5.mp3"));
@@ -149,7 +149,6 @@ int main()
         
         pthread_t id;
         pthread_create(&id, NULL, ReciveMusicInfo, &conn_fd);
-
         //测试socket播放
         // sleep(3);
         // struct json_object* obj1 = json_object_new_object();
