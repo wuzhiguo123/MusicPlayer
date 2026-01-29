@@ -87,7 +87,7 @@ int32_t PlayCallBack(const float *samples, int32_t n)//samples:数据;n:数据�
 		}
     }
 
-    if(ret < 0)
+    else if(ret < 0)
     {
         fprintf(stderr,"写入失败\n");
         return 0;

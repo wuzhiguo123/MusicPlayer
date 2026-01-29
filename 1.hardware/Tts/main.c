@@ -34,7 +34,9 @@ void HandleQuit()
 }
 void HandleStop()
 {
+
     play_flag = 0;
+    snd_pcm_drop(pcmp);
 }
 int main()
 {
@@ -67,7 +69,6 @@ int main()
     }
     char buffer[1024] = {0};
     while (running) {
-        memset(buffer, 0, sizeof(buffer));
         ssize_t r = read(tts_fd, buffer,sizeof(char)*128);
         if(r < 0)
         {
@@ -85,6 +86,8 @@ int main()
 								70, 1.0, PlayCallBack);
         	//等待缓冲区数据播放完毕
 		snd_pcm_drain(pcmp);    // SETUP状态
+        memset(buffer, 0, sizeof(buffer));
+
 	
     }
     return 0;
