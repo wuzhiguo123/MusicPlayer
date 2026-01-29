@@ -156,22 +156,6 @@ alsa/asoundlib.h
 stdint.h
 -
 
-/root/musicplayer/1.hardware/Tts/alsa.c
-alsa.h
-/root/musicplayer/1.hardware/Tts/alsa.h
-alsa/asoundlib.h
-/root/musicplayer/1.hardware/Tts/alsa/asoundlib.h
-alloca.h
--
-asm-generic/errno-base.h
--
-stdint.h
--
-stdio.h
--
-stdlib.h
--
-
 /root/musicplayer/1.hardware/Tts/alsa.h
 alsa/asoundlib.h
 /root/musicplayer/1.hardware/Tts/alsa/asoundlib.h
