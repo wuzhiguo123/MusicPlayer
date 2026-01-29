@@ -41,6 +41,8 @@ stddef.h
 /root/musicplayer/1.hardware/Player/net/server.c
 arpa/inet.h
 -
+asm-generic/socket.h
+-
 json-c/json_object.h
 -
 json-c/json_tokener.h
