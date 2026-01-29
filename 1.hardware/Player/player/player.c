@@ -569,10 +569,9 @@ void SequencePlay()
     SetShm(&cur_info);
 }
 
-void ReplyKeyWords()
+void ReplyKeyWords(const char* reply_words)
 {
-    char buffer[128] = "老大我在";
-    write(g_ttsfd,buffer , strlen(buffer));
+    write(g_ttsfd,reply_words , strlen(reply_words));
 }
 
 void TtsStop()
@@ -590,6 +589,23 @@ void TtsStop()
         kill(tts_pid, SIGUSR1);
     }
 }
+void ChangeVoive()
+{
+    FILE* fp = popen("pgrep tts", "r");
+    if(fp == NULL)
+    {
+        fprintf(stderr,"ponen() error!\n");
+    }
+    char buff[64] = {0};
+    fgets(buff, sizeof(buff), fp);
+    pid_t tts_pid = atoi(buff);
+    if(strlen(buff))
+    {
+        kill(tts_pid, SIGUSR2);
+    }
+    char reply_words[64] = {"好的,以后我就用这个声音跟你交流。"};
+    ReplyKeyWords(reply_words);
+}
 
 void ProcessAsrSignal(char* signal)
 {
@@ -599,7 +615,8 @@ void ProcessAsrSignal(char* signal)
     {
         SuspendPlay();
         TtsStop();
-        ReplyKeyWords();
+        char reply_words[128] = {"老大我在"};
+        ReplyKeyWords(reply_words);
     }
     else if(strstr(signal, "听歌") || strstr(signal,"开始"))
     {
@@ -660,6 +677,10 @@ void ProcessAsrSignal(char* signal)
         ClearMusicList();
         GetMusicName("许嵩");
         StartPlay();
+    }
+    else if(strstr(signal,"换") && strstr(signal,"声音"))
+    {
+        ChangeVoive();
     }
     else {
         char cmd[1024] = {0};

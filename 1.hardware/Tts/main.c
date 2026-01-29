@@ -13,6 +13,7 @@ int play_flag = 1;
 int tts_fd = -1;
 extern snd_pcm_t *pcmp;
 int running = 1;
+int speaker_id = 1;
 
 
 void CleanUp()
@@ -38,10 +39,15 @@ void HandleStop()
     play_flag = 0;
     snd_pcm_drop(pcmp);
 }
+void HandleChangeVoice()
+{
+    speaker_id = (speaker_id+1)%175;
+}
 int main()
 {
     signal(SIGINT, HandleQuit);
     signal(SIGUSR1, HandleStop);
+    signal(SIGUSR2, HandleChangeVoice);
     if(InitSherpaTts()== 0)
         printf("初始化TTS成功\n");
     else 
@@ -83,7 +89,7 @@ int main()
         play_flag = 1;
         snd_pcm_prepare(pcmp);  // PREPARED状态
         SherpaOnnxOfflineTtsGenerateWithCallback(tts, buffer, 
-								70, 1.0, PlayCallBack);
+								speaker_id, 1.0, PlayCallBack);
         	//等待缓冲区数据播放完毕
 		snd_pcm_drain(pcmp);    // SETUP状态
         memset(buffer, 0, sizeof(buffer));
