@@ -111,6 +111,7 @@ CMakeFiles/MusicPlayer.dir/net/net.c.o: ../net/net.c
 CMakeFiles/MusicPlayer.dir/net/net.c.o: ../net/net.h
 
 CMakeFiles/MusicPlayer.dir/player/player.c.o: ../device/device.h
+CMakeFiles/MusicPlayer.dir/player/player.c.o: ../main.h
 CMakeFiles/MusicPlayer.dir/player/player.c.o: ../musiclink/link.h
 CMakeFiles/MusicPlayer.dir/player/player.c.o: ../net/net.h
 CMakeFiles/MusicPlayer.dir/player/player.c.o: ../select/select.h

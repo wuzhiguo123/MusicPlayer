@@ -6,32 +6,32 @@
 },
 {
   "directory": "/root/musicplayer/1.hardware/Player/build",
-  "command": "/usr/bin/aarch64-linux-gnu-gcc -D_POSIX_C_SOURCE=200809L -I/root/musicplayer/1.hardware/Player -I/root/musicplayer/1.hardware/Player/player -I/root/musicplayer/1.hardware/Player/musiclink -I/root/musicplayer/1.hardware/Player/select -I/root/musicplayer/1.hardware/Player/net -I/root/musicplayer/1.hardware/Player/device -I/root/json-arm-install/include -I/root/alsa-arm-install/include    -Wall -Wextra -std=gnu11 -o CMakeFiles/MusicPlayer.dir/player/player.c.o   -c /root/musicplayer/1.hardware/Player/player/player.c",
+  "command": "/usr/bin/aarch64-linux-gnu-gcc  -I/root/musicplayer/1.hardware/Player -I/root/musicplayer/1.hardware/Player/player -I/root/musicplayer/1.hardware/Player/musiclink -I/root/musicplayer/1.hardware/Player/select -I/root/musicplayer/1.hardware/Player/net -I/root/musicplayer/1.hardware/Player/device -I/root/json-arm-install/include -I/root/alsa-arm-install/include    -Wall -Wextra -std=gnu11 -o CMakeFiles/MusicPlayer.dir/player/player.c.o   -c /root/musicplayer/1.hardware/Player/player/player.c",
   "file": "/root/musicplayer/1.hardware/Player/player/player.c"
 },
 {
   "directory": "/root/musicplayer/1.hardware/Player/build",
-  "command": "/usr/bin/aarch64-linux-gnu-gcc -D_POSIX_C_SOURCE=200809L -I/root/musicplayer/1.hardware/Player -I/root/musicplayer/1.hardware/Player/player -I/root/musicplayer/1.hardware/Player/musiclink -I/root/musicplayer/1.hardware/Player/select -I/root/musicplayer/1.hardware/Player/net -I/root/musicplayer/1.hardware/Player/device -I/root/json-arm-install/include -I/root/alsa-arm-install/include    -Wall -Wextra -std=gnu11 -o CMakeFiles/MusicPlayer.dir/musiclink/link.c.o   -c /root/musicplayer/1.hardware/Player/musiclink/link.c",
+  "command": "/usr/bin/aarch64-linux-gnu-gcc  -I/root/musicplayer/1.hardware/Player -I/root/musicplayer/1.hardware/Player/player -I/root/musicplayer/1.hardware/Player/musiclink -I/root/musicplayer/1.hardware/Player/select -I/root/musicplayer/1.hardware/Player/net -I/root/musicplayer/1.hardware/Player/device -I/root/json-arm-install/include -I/root/alsa-arm-install/include    -Wall -Wextra -std=gnu11 -o CMakeFiles/MusicPlayer.dir/musiclink/link.c.o   -c /root/musicplayer/1.hardware/Player/musiclink/link.c",
   "file": "/root/musicplayer/1.hardware/Player/musiclink/link.c"
 },
 {
   "directory": "/root/musicplayer/1.hardware/Player/build",
-  "command": "/usr/bin/aarch64-linux-gnu-gcc -D_POSIX_C_SOURCE=200809L -I/root/musicplayer/1.hardware/Player -I/root/musicplayer/1.hardware/Player/player -I/root/musicplayer/1.hardware/Player/musiclink -I/root/musicplayer/1.hardware/Player/select -I/root/musicplayer/1.hardware/Player/net -I/root/musicplayer/1.hardware/Player/device -I/root/json-arm-install/include -I/root/alsa-arm-install/include    -Wall -Wextra -std=gnu11 -o CMakeFiles/MusicPlayer.dir/select/select.c.o   -c /root/musicplayer/1.hardware/Player/select/select.c",
+  "command": "/usr/bin/aarch64-linux-gnu-gcc  -I/root/musicplayer/1.hardware/Player -I/root/musicplayer/1.hardware/Player/player -I/root/musicplayer/1.hardware/Player/musiclink -I/root/musicplayer/1.hardware/Player/select -I/root/musicplayer/1.hardware/Player/net -I/root/musicplayer/1.hardware/Player/device -I/root/json-arm-install/include -I/root/alsa-arm-install/include    -Wall -Wextra -std=gnu11 -o CMakeFiles/MusicPlayer.dir/select/select.c.o   -c /root/musicplayer/1.hardware/Player/select/select.c",
   "file": "/root/musicplayer/1.hardware/Player/select/select.c"
 },
 {
   "directory": "/root/musicplayer/1.hardware/Player/build",
-  "command": "/usr/bin/aarch64-linux-gnu-gcc -D_POSIX_C_SOURCE=200809L -I/root/musicplayer/1.hardware/Player -I/root/musicplayer/1.hardware/Player/player -I/root/musicplayer/1.hardware/Player/musiclink -I/root/musicplayer/1.hardware/Player/select -I/root/musicplayer/1.hardware/Player/net -I/root/musicplayer/1.hardware/Player/device -I/root/json-arm-install/include -I/root/alsa-arm-install/include    -Wall -Wextra -std=gnu11 -o CMakeFiles/MusicPlayer.dir/net/net.c.o   -c /root/musicplayer/1.hardware/Player/net/net.c",
+  "command": "/usr/bin/aarch64-linux-gnu-gcc  -I/root/musicplayer/1.hardware/Player -I/root/musicplayer/1.hardware/Player/player -I/root/musicplayer/1.hardware/Player/musiclink -I/root/musicplayer/1.hardware/Player/select -I/root/musicplayer/1.hardware/Player/net -I/root/musicplayer/1.hardware/Player/device -I/root/json-arm-install/include -I/root/alsa-arm-install/include    -Wall -Wextra -std=gnu11 -o CMakeFiles/MusicPlayer.dir/net/net.c.o   -c /root/musicplayer/1.hardware/Player/net/net.c",
   "file": "/root/musicplayer/1.hardware/Player/net/net.c"
 },
 {
   "directory": "/root/musicplayer/1.hardware/Player/build",
-  "command": "/usr/bin/aarch64-linux-gnu-gcc -D_POSIX_C_SOURCE=200809L -I/root/musicplayer/1.hardware/Player -I/root/musicplayer/1.hardware/Player/player -I/root/musicplayer/1.hardware/Player/musiclink -I/root/musicplayer/1.hardware/Player/select -I/root/musicplayer/1.hardware/Player/net -I/root/musicplayer/1.hardware/Player/device -I/root/json-arm-install/include -I/root/alsa-arm-install/include    -Wall -Wextra -std=gnu11 -o CMakeFiles/MusicPlayer.dir/device/device.c.o   -c /root/musicplayer/1.hardware/Player/device/device.c",
+  "command": "/usr/bin/aarch64-linux-gnu-gcc  -I/root/musicplayer/1.hardware/Player -I/root/musicplayer/1.hardware/Player/player -I/root/musicplayer/1.hardware/Player/musiclink -I/root/musicplayer/1.hardware/Player/select -I/root/musicplayer/1.hardware/Player/net -I/root/musicplayer/1.hardware/Player/device -I/root/json-arm-install/include -I/root/alsa-arm-install/include    -Wall -Wextra -std=gnu11 -o CMakeFiles/MusicPlayer.dir/device/device.c.o   -c /root/musicplayer/1.hardware/Player/device/device.c",
   "file": "/root/musicplayer/1.hardware/Player/device/device.c"
 },
 {
   "directory": "/root/musicplayer/1.hardware/Player/build",
-  "command": "/usr/bin/aarch64-linux-gnu-gcc -D_POSIX_C_SOURCE=200809L -I/root/musicplayer/1.hardware/Player -I/root/musicplayer/1.hardware/Player/player -I/root/musicplayer/1.hardware/Player/musiclink -I/root/musicplayer/1.hardware/Player/select -I/root/musicplayer/1.hardware/Player/net -I/root/musicplayer/1.hardware/Player/device -I/root/json-arm-install/include -I/root/alsa-arm-install/include    -Wall -Wextra -std=gnu11 -o CMakeFiles/MusicPlayer.dir/main.c.o   -c /root/musicplayer/1.hardware/Player/main.c",
+  "command": "/usr/bin/aarch64-linux-gnu-gcc  -I/root/musicplayer/1.hardware/Player -I/root/musicplayer/1.hardware/Player/player -I/root/musicplayer/1.hardware/Player/musiclink -I/root/musicplayer/1.hardware/Player/select -I/root/musicplayer/1.hardware/Player/net -I/root/musicplayer/1.hardware/Player/device -I/root/json-arm-install/include -I/root/alsa-arm-install/include    -Wall -Wextra -std=gnu11 -o CMakeFiles/MusicPlayer.dir/main.c.o   -c /root/musicplayer/1.hardware/Player/main.c",
   "file": "/root/musicplayer/1.hardware/Player/main.c"
 }
 ]

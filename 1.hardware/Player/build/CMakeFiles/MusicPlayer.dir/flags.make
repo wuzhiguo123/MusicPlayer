@@ -4,7 +4,7 @@
 # compile C with /usr/bin/aarch64-linux-gnu-gcc
 C_FLAGS =   -Wall -Wextra -std=gnu11
 
-C_DEFINES = -D_POSIX_C_SOURCE=200809L
+C_DEFINES = 
 
 C_INCLUDES = -I/root/musicplayer/1.hardware/Player -I/root/musicplayer/1.hardware/Player/player -I/root/musicplayer/1.hardware/Player/musiclink -I/root/musicplayer/1.hardware/Player/select -I/root/musicplayer/1.hardware/Player/net -I/root/musicplayer/1.hardware/Player/device -I/root/json-arm-install/include -I/root/alsa-arm-install/include 
 
