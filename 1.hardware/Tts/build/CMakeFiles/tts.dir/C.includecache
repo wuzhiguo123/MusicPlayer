@@ -152,35 +152,23 @@ alsa/asoundlib.h
 
 /root/alsa-arm-install/include/alsa/version.h
 
-/root/model/include/sherpa-onnx/c-api/c-api.h
-stdint.h
--
-
-/root/musicplayer/1.hardware/Tts/alsa.h
-alsa/asoundlib.h
-/root/musicplayer/1.hardware/Tts/alsa/asoundlib.h
-
-/root/musicplayer/1.hardware/Tts/main.c
-alsa/asoundlib.h
-/root/musicplayer/1.hardware/Tts/alsa/asoundlib.h
-tts.h
-/root/musicplayer/1.hardware/Tts/tts.h
+/root/musicplayer/1.hardware/Tts/alsa.c
 alsa.h
 /root/musicplayer/1.hardware/Tts/alsa.h
-fcntl.h
+alsa/asoundlib.h
+/root/musicplayer/1.hardware/Tts/alsa/asoundlib.h
+alloca.h
 -
-signal.h
+asm-generic/errno-base.h
+-
+stdint.h
 -
 stdio.h
 -
 stdlib.h
 -
-string.h
--
-unistd.h
--
-sherpa-onnx/c-api/c-api.h
-/root/musicplayer/1.hardware/Tts/sherpa-onnx/c-api/c-api.h
 
-/root/musicplayer/1.hardware/Tts/tts.h
+/root/musicplayer/1.hardware/Tts/alsa.h
+alsa/asoundlib.h
+/root/musicplayer/1.hardware/Tts/alsa/asoundlib.h
 
