@@ -268,22 +268,6 @@ json_object.h
 
 /root/json-arm-install/include/json-c/printbuf.h
 
-/root/musicplayer/1.hardware/Player/device/device.c
-device.h
-/root/musicplayer/1.hardware/Player/device/device.h
-player.h
-/root/musicplayer/1.hardware/Player/device/player.h
-sys/select.h
--
-linux/input.h
--
-signal.h
--
-
-/root/musicplayer/1.hardware/Player/device/device.h
-alsa/asoundlib.h
--
-
 /root/musicplayer/1.hardware/Player/main.c
 select/select.h
 /root/musicplayer/1.hardware/Player/select/select.h
