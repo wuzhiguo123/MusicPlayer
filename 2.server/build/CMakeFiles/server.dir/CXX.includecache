@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/musicplayer/2.server/main.cpp
+iostream
+-
+server.hpp
+/root/musicplayer/2.server/server.hpp
+
+/root/musicplayer/2.server/server.hpp
+event2/event.h
+-
+stdint.h
+-
+sys/types.h
+-
+sys/socket.h
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+

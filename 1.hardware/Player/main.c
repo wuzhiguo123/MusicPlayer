@@ -14,6 +14,7 @@ extern MusicNode* music_head;
 extern int g_maxfd;
 int g_asrfd;
 int g_ttsfd;
+extern int g_device_mode;
 void CheckMusicList()
 {
 
@@ -77,20 +78,18 @@ int main()
     int ret = InitSocket();
     if(ret < 0)
     {
+        g_device_mode = OFFLINE_MODE;
         printf("OFFLINE MODE\n");
+        ChangeOfflineMode();
     }
     if(ret == 0)
     {
         printf("ONLINE MODE\n");
+        GetMusicName("其他");
     }
-
     //获取音乐文件名
     ShowMenu();
-    GetMusicName("其他");
     MySelect();
-
-
-
     CheckMusicList();
  
     

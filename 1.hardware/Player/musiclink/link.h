@@ -11,4 +11,5 @@ typedef struct MusicNode
 int InitMusicLink();
 int LinkMusicList(const char*);
 void ClearMusicList();
+void InsertMusic(const char* name);
 #endif

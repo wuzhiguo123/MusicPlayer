@@ -11,7 +11,7 @@
 #define ONLINE_MODE 1
 #define OFFLINE_MODE 2
 #define ONLINE_URL "http://180.76.142.171/music/"
-#define OFFLINE_URL "XXXX"
+#define OFFLINE_URL "/mnt/usb/music/"
 
 
 typedef struct Shm
@@ -49,5 +49,12 @@ void DownVolume();
 void CirclePlay();
 void SequencePlay();
 void ReadAsrFifo();
+int CheckSpace(const char* file_name);
+void SemP();
+void SemV();
+void SemSet();
+void SetShm(Shm* s);
+void GetShm(Shm* s);
+void ChangeOfflineMode();
 
 #endif

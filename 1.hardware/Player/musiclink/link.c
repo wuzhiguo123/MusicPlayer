@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include <unistd.h>
 #include "main.h"
 
@@ -27,20 +28,23 @@ int InitMusicLink()
 }
 void InsertMusic(const char* name)
 {
-    printf("++++++++++++++++name:%s\n",name);
-    printf("MUSIC_HEAD_P:%p\n",music_head);
+    // printf("++++++++++++++++name:%s\n",name);
+    // printf("MUSIC_HEAD_P:%p\n",music_head);
     if(music_head == NULL)
     {
-        music_head = malloc(sizeof(MusicNode));
-        music_head->music_name[0] = 0;
+        InitMusicLink();
     }
     if(music_head->music_name[0] == 0)
     {
         strcpy(music_head->music_name,name);
-        printf("MUSIC_HEAD->NAME:%s  NAME:%s\n",music_head->music_name,name);
+        // printf("MUSIC_HEAD->NAME:%s  NAME:%s\n",music_head->music_name,name);
         return;
     }
     MusicNode* new = malloc(sizeof(MusicNode));
+    if(new == NULL)
+    {
+        perror("malloc() error");
+    }
     strcpy(new->music_name, name);
     MusicNode* cur;
     cur = music_head;
@@ -51,6 +55,7 @@ void InsertMusic(const char* name)
     cur->next = new;
     new->next = NULL;
     new->prev = cur;
+    CheckMusicList();
 }
 int LinkMusicList(const char* music_name)
 {
@@ -85,8 +90,10 @@ void ClearMusicList()
     while(p)
     {
         MusicNode* q = p->next;
+        printf("清除：%s\n",p->music_name);
         free(p);
         p = q;
     }
     music_head = NULL;
+    printf("链表清空\n");
 }

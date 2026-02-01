@@ -81,9 +81,9 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     ${ALSA_INCLUDE_DIRS}
 )
 
-target_compile_definitions(${PROJECT_NAME} PRIVATE
-    _POSIX_C_SOURCE=200809L
-)
+# target_compile_definitions(${PROJECT_NAME} PRIVATE
+#     _XOPEN_SOURCE 700
+# )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
     ${JSON-C_LIBRARIES}
