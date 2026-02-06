@@ -1,0 +1,4 @@
+/root/musicplayer/1.hardware/Player/build/CMakeFiles/rebuild_cache.dir
+/root/musicplayer/1.hardware/Player/build/CMakeFiles/server.dir
+/root/musicplayer/1.hardware/Player/build/CMakeFiles/edit_cache.dir
+/root/musicplayer/1.hardware/Player/build/CMakeFiles/MusicPlayer.dir

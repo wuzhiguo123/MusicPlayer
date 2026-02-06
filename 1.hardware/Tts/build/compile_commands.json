@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/root/musicplayer/1.hardware/Tts/build",
+  "command": "/usr/bin/aarch64-linux-gnu-gcc  -I/root/model/include -I/root/musicplayer/1.hardware/Tts -I/root/alsa-arm-install/include    -Wall -Wextra -std=gnu11 -o CMakeFiles/tts.dir/main.c.o   -c /root/musicplayer/1.hardware/Tts/main.c",
+  "file": "/root/musicplayer/1.hardware/Tts/main.c"
+},
+{
+  "directory": "/root/musicplayer/1.hardware/Tts/build",
+  "command": "/usr/bin/aarch64-linux-gnu-gcc  -I/root/model/include -I/root/musicplayer/1.hardware/Tts -I/root/alsa-arm-install/include    -Wall -Wextra -std=gnu11 -o CMakeFiles/tts.dir/alsa.c.o   -c /root/musicplayer/1.hardware/Tts/alsa.c",
+  "file": "/root/musicplayer/1.hardware/Tts/alsa.c"
+},
+{
+  "directory": "/root/musicplayer/1.hardware/Tts/build",
+  "command": "/usr/bin/aarch64-linux-gnu-gcc  -I/root/model/include -I/root/musicplayer/1.hardware/Tts -I/root/alsa-arm-install/include    -Wall -Wextra -std=gnu11 -o CMakeFiles/tts.dir/tts.c.o   -c /root/musicplayer/1.hardware/Tts/tts.c",
+  "file": "/root/musicplayer/1.hardware/Tts/tts.c"
+}
+]

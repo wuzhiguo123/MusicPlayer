@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/root/musicplayer/1.hardware/Asr/build",
+  "command": "/usr/bin/aarch64-linux-gnu-gcc  -I/root/model/include -I/root/musicplayer/1.hardware/Asr -I/root/alsa-arm-install/include    -Wall -Wextra -std=gnu11 -o CMakeFiles/asr.dir/main.c.o   -c /root/musicplayer/1.hardware/Asr/main.c",
+  "file": "/root/musicplayer/1.hardware/Asr/main.c"
+},
+{
+  "directory": "/root/musicplayer/1.hardware/Asr/build",
+  "command": "/usr/bin/aarch64-linux-gnu-gcc  -I/root/model/include -I/root/musicplayer/1.hardware/Asr -I/root/alsa-arm-install/include    -Wall -Wextra -std=gnu11 -o CMakeFiles/asr.dir/alsa.c.o   -c /root/musicplayer/1.hardware/Asr/alsa.c",
+  "file": "/root/musicplayer/1.hardware/Asr/alsa.c"
+},
+{
+  "directory": "/root/musicplayer/1.hardware/Asr/build",
+  "command": "/usr/bin/aarch64-linux-gnu-gcc  -I/root/model/include -I/root/musicplayer/1.hardware/Asr -I/root/alsa-arm-install/include    -Wall -Wextra -std=gnu11 -o CMakeFiles/asr.dir/sherpa.c.o   -c /root/musicplayer/1.hardware/Asr/sherpa.c",
+  "file": "/root/musicplayer/1.hardware/Asr/sherpa.c"
+},
+{
+  "directory": "/root/musicplayer/1.hardware/Asr/build",
+  "command": "/usr/bin/aarch64-linux-gnu-gcc  -I/root/model/include -I/root/musicplayer/1.hardware/Asr -I/root/alsa-arm-install/include    -Wall -Wextra -std=gnu11 -o CMakeFiles/asr.dir/kws.c.o   -c /root/musicplayer/1.hardware/Asr/kws.c",
+  "file": "/root/musicplayer/1.hardware/Asr/kws.c"
+}
+]

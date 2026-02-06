@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/root/musicplayer/1.hardware/Chatmodel/build",
+  "command": "/usr/bin/aarch64-linux-gnu-gcc -D_POSIX_C_SOURCE=200809L -I/root/musicplayer/1.hardware/Chatmodel -I/root/json-arm-install/include    -Wall -Wextra -std=gnu11 -o CMakeFiles/qianwen.dir/qianwen.c.o   -c /root/musicplayer/1.hardware/Chatmodel/qianwen.c",
+  "file": "/root/musicplayer/1.hardware/Chatmodel/qianwen.c"
+}
+]

@@ -1,0 +1,1 @@
+/usr/bin/aarch64-linux-gnu-gcc    CMakeFiles/tts.dir/main.c.o CMakeFiles/tts.dir/alsa.c.o CMakeFiles/tts.dir/tts.c.o  -o tts  -Wl,-rpath,/root/model/lib:/root/alsa-arm-install/lib /root/model/lib/libonnxruntime.so /root/model/lib/libsherpa-onnx-c-api.so /root/alsa-arm-install/lib/libasound.so.2.0.0 

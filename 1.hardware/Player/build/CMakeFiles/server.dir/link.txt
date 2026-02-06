@@ -1,0 +1,1 @@
+/usr/bin/aarch64-linux-gnu-gcc    CMakeFiles/server.dir/net/server.c.o  -o server  -Wl,-rpath,/root/json-arm-install/lib:/root/alsa-arm-install/lib /root/json-arm-install/lib/libjson-c.so.5.4.0 /root/alsa-arm-install/lib/libasound.so.2.0.0 -lpthread 
