@@ -88,7 +88,7 @@ void *SendServer(void *arg) {
     // 发送给服务器
     SendMusicInfo(obj);
     json_object_put(obj);
-    sleep(2);
+    sleep(1);
   }
 }
 
@@ -162,7 +162,7 @@ int RecSocketData(char *data) {
 // 向服务器根据歌手名请求音乐数据
 
 int GetMusicName(const char *singer) {
-    ClearMusicList();
+  ClearMusicList();
   //   printf("GETMUSCINAME\nSINGER:%s\n", singer);
   if (g_device_mode == ONLINE_MODE) {
     struct json_object *obj = json_object_new_object();
@@ -212,10 +212,9 @@ int GetMusicName(const char *singer) {
 
         strcat(name + strlen(name), music_file->d_name);
         InsertMusic(name);
-        printf("插入的歌曲名：%s\n",name);
+        printf("插入的歌曲名：%s\n", name);
         memset(name, 0, sizeof(name));
       }
-    
     }
   }
 
@@ -409,6 +408,8 @@ void ReadSocket() {
   } else if (!(strcmp(cmd, "app_sequence"))) {
     SocketSeqPlay();
   } else if (!strcmp(cmd, "app_get_music")) {
+    UploadMusic();
+  } else if (!strcmp(cmd, "app_capture_cur_musiclist")) {
     UploadMusic();
   }
 }

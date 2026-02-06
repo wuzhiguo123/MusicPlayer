@@ -85,7 +85,8 @@ int main()
     if(ret == 0)
     {
         printf("ONLINE MODE\n");
-        GetMusicName("其他");
+        GetMusicName("周杰伦");
+        UploadMusic();
     }
     //获取音乐文件名
     ShowMenu();
@@ -94,6 +95,6 @@ int main()
  
     
 
-    while(1)
-    {}
+    // while(1)
+    // {}
 }

@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/usr/aarch64-linux-gnu/usr/include/mysql -I/usr/aarch64-linux-gnu/usr/include/jsoncpp 
 

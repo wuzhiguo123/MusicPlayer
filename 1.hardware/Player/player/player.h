@@ -10,7 +10,7 @@
 
 #define ONLINE_MODE 1
 #define OFFLINE_MODE 2
-#define ONLINE_URL "http://180.76.142.171/music/"
+#define ONLINE_URL "http://8.130.123.33/music/"
 #define OFFLINE_URL "/mnt/usb/music/"
 
 
